@@ -45,7 +45,7 @@
         {{-- Logo --}}
         <a href="{{ route('home') }}" class="navbar-campaign-logo">
             <img src="{{ asset('assets/images/favicons/apple-touch-icon.png') }}" alt="VCK Logo" class="h-12 w-12">
-            <span class="text-2xl font-extrabold text-[var(--color-vck-red)] hidden sm:inline">
+            <span class="text-2xl font-extrabold text-[var(--color-mjk-red)] hidden sm:inline">
                 {{ __('site.title') }}
             </span>
         </a>
@@ -144,7 +144,7 @@
     <div class="mobile-menu-campaign-panel">
         {{-- Mobile Menu Header --}}
         <div class="mobile-menu-campaign-header">
-            <span class="text-xl font-bold text-[var(--color-vck-red)]">{{ __('site.title') }}</span>
+            <span class="text-xl font-bold text-[var(--color-mjk-red)]">{{ __('site.title') }}</span>
             <button onclick="toggleMobileMenu()" class="mobile-menu-campaign-close" aria-label="Close mobile menu">
                 <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
                     <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"/>

@@ -5,7 +5,7 @@
 @section('content')
 
 {{-- Campaign Hero Section --}}
-<section class="bg-gradient-to-br from-[var(--color-vck-red)] via-[var(--color-vck-red)] to-[var(--color-vck-blue)] py-20">
+<section class="bg-gradient-to-br from-[var(--color-mjk-red)] via-[var(--color-mjk-red)] to-[var(--color-mjk-blue)] py-20">
     <div class="max-w-7xl mx-auto px-4 text-center" data-aos="fade-up">
         <h1 class="text-5xl md:text-6xl font-extrabold text-white mb-6">
             {{ __('site.donation.title') }}
@@ -103,7 +103,7 @@
                             {{-- Personal Information --}}
                             <div class="border-b border-gray-200 pb-8">
                                 <h3 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
-                                    <svg class="w-6 h-6 mr-3 text-[var(--color-vck-red)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg class="w-6 h-6 mr-3 text-[var(--color-mjk-red)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
                                     </svg>
                                     {{ __('site.donation.personal_info') }}
@@ -142,7 +142,7 @@
                             {{-- Address Details --}}
                             <div class="border-b border-gray-200 pb-8">
                                 <h3 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
-                                    <svg class="w-6 h-6 mr-3 text-[var(--color-vck-red)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg class="w-6 h-6 mr-3 text-[var(--color-mjk-red)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
                                     </svg>
                                     {{ __('site.donation.address_details') }}
@@ -190,7 +190,7 @@
                             {{-- Donation Details --}}
                             <div class="pb-8">
                                 <h3 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
-                                    <svg class="w-6 h-6 mr-3 text-[var(--color-vck-red)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <svg class="w-6 h-6 mr-3 text-[var(--color-mjk-red)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                                     </svg>
                                     {{ __('site.donation.donation_details') }}
@@ -257,7 +257,7 @@
                         </div>
 
                         {{-- Tax Benefit Notice --}}
-                        <div class="mt-8 p-4 bg-[var(--color-vck-red)]/10 border-l-4 border-[var(--color-vck-red)] rounded-r-lg text-left">
+                        <div class="mt-8 p-4 bg-[var(--color-mjk-red)]/10 border-l-4 border-[var(--color-mjk-red)] rounded-r-lg text-left">
                             <p class="text-sm text-gray-800">
                                 <strong class="font-semibold">{{ __('site.donation.tax_benefit') }}</strong>
                             </p>
@@ -334,7 +334,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     amount: order.amount,
                     currency: order.currency,
                     order_id: order.order_id,
-                    name: 'VCK - Viduthalai Chiruthaigal Katchi',
+                    name: 'MJK - Makkal Jananayaga Katchi',
                     description: 'Party Donation',
                     handler: function (response) {
                         fetch('{{ route("donation.verify") }}', {

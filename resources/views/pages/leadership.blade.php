@@ -5,7 +5,7 @@
 @section('content')
 
 {{-- Page Hero --}}
-<section class="bg-gradient-to-br from-[var(--color-vck-red)] via-[var(--color-vck-red)] to-[var(--color-vck-blue)] py-20">
+<section class="bg-gradient-to-br from-[var(--color-mjk-red)] via-[var(--color-mjk-red)] to-[var(--color-mjk-blue)] py-20">
     <div class="max-w-7xl mx-auto px-4 text-center" data-aos="fade-up">
         <h1 class="text-5xl md:text-6xl font-extrabold text-white mb-6">
             {{ __('site.leadership.title') }}
@@ -47,7 +47,7 @@
                                         <img
                                             src="{{ $bearer->photo_url }}"
                                             alt="{{ $bearerName }}"
-                                            class="w-32 h-32 rounded-full object-cover mx-auto shadow-lg border-4 border-[var(--color-vck-red)]"
+                                            class="w-32 h-32 rounded-full object-cover mx-auto shadow-lg border-4 border-[var(--color-mjk-red)]"
                                             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
                                         />
                                     @endif
@@ -74,7 +74,7 @@
                                 @if($bearer->facebook || $bearer->x || $bearer->instagram || $bearer->youtube)
                                     <div class="flex justify-center gap-3">
                                         @if($bearer->facebook)
-                                            <a href="{{ $bearer->facebook }}" target="_blank" class="w-10 h-10 rounded-full border-2 border-gray-300 hover:border-[var(--color-vck-blue)] hover:bg-[var(--color-vck-blue)] hover:text-white flex items-center justify-center transition-all">
+                                            <a href="{{ $bearer->facebook }}" target="_blank" class="w-10 h-10 rounded-full border-2 border-gray-300 hover:border-[var(--color-mjk-blue)] hover:bg-[var(--color-mjk-blue)] hover:text-white flex items-center justify-center transition-all">
                                                 <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
                                                     <path d="M15.12,5.32H17V2.14A26.11,26.11,0,0,0,14.26,2C11.54,2,9.68,3.66,9.68,6.7V9.32H6.61v3.56H9.68V22h3.68V12.88h3.06l.46-3.56H13.36V7.05C13.36,6,13.64,5.32,15.12,5.32Z"></path>
                                                 </svg>
@@ -130,7 +130,7 @@
 @endif
 
 {{-- CTA Section --}}
-<section class="bg-gradient-to-r from-[var(--color-vck-red)] to-[var(--color-vck-blue)] py-20">
+<section class="bg-gradient-to-r from-[var(--color-mjk-red)] to-[var(--color-mjk-blue)] py-20">
     <div class="max-w-4xl mx-auto px-4 text-center" data-aos="zoom-in">
         <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-6">
             {{ __('site.leadership.join_team_cta') }}

@@ -5,7 +5,7 @@
 @section('content')
 
 {{-- Campaign Hero Section --}}
-<section class="bg-gradient-to-br from-[var(--color-vck-red)] via-[var(--color-vck-red)] to-[var(--color-vck-blue)] py-20">
+<section class="bg-gradient-to-br from-[var(--color-mjk-red)] via-[var(--color-mjk-red)] to-[var(--color-mjk-blue)] py-20">
     <div class="max-w-7xl mx-auto px-4 text-center" data-aos="fade-up">
         <h1 class="text-5xl md:text-6xl font-extrabold text-white mb-6">
             {{ __('site.join.title') }}
@@ -101,7 +101,7 @@
                     {{-- Personal Information Section --}}
                     <div class="border-b border-gray-200 pb-8">
                         <h3 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
-                            <svg class="w-6 h-6 mr-3 text-[var(--color-vck-red)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg class="w-6 h-6 mr-3 text-[var(--color-mjk-red)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/>
                             </svg>
                             {{ __('site.join.personal_info') }}
@@ -131,7 +131,7 @@
                                     :value="old('phone_no')"
                                     required
                                 />
-                                <button type="button" id="verifyPhoneBtn" class="mt-2 px-4 py-2 bg-[var(--color-vck-blue)] hover:bg-blue-700 text-white text-sm font-medium rounded-lg transition duration-200">
+                                <button type="button" id="verifyPhoneBtn" class="mt-2 px-4 py-2 bg-[var(--color-mjk-blue)] hover:bg-blue-700 text-white text-sm font-medium rounded-lg transition duration-200">
                                     <svg class="w-4 h-4 inline-block mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
                                     Verify Mobile Number
                                 </button>
@@ -198,7 +198,7 @@
                     {{-- Address Information Section --}}
                     <div class="border-b border-gray-200 pb-8">
                         <h3 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
-                            <svg class="w-6 h-6 mr-3 text-[var(--color-vck-red)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+                            <svg class="w-6 h-6 mr-3 text-[var(--color-mjk-red)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
                             {{ __('site.join.address_info') }}
                         </h3>
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -222,7 +222,7 @@
                             />
                             <div>
                                 <label for="photo" class="block text-base font-medium text-gray-700 mb-2">{{ __('site.join.photo') }}</label>
-                                <input type="file" id="photo" name="photo" accept="image/*" class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-[var(--color-vck-red)]/10 file:text-[var(--color-vck-red)] hover:file:bg-[var(--color-vck-red)]/20 transition duration-200">
+                                <input type="file" id="photo" name="photo" accept="image/*" class="block w-full text-sm text-gray-500 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-[var(--color-mjk-red)]/10 file:text-[var(--color-mjk-red)] hover:file:bg-[var(--color-mjk-red)]/20 transition duration-200">
                                 <p class="text-sm text-gray-500 mt-1">{{ __('site.join.photo_help') }}</p>
                             </div>
                         </div>
@@ -231,7 +231,7 @@
                     {{-- Location Information Section --}}
                     <div class="border-b border-gray-200 pb-8">
                         <h3 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
-                            <svg class="w-6 h-6 mr-3 text-[var(--color-vck-red)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg class="w-6 h-6 mr-3 text-[var(--color-mjk-red)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
                             </svg>
@@ -299,11 +299,11 @@
                     {{-- Terms and Submit Section --}}
                     <div>
                         <h3 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
-                            <svg class="w-6 h-6 mr-3 text-[var(--color-vck-red)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            <svg class="w-6 h-6 mr-3 text-[var(--color-mjk-red)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                             {{ __('site.join.final_step') }}
                         </h3>
                         <div class="flex items-start mb-8">
-                            <input id="terms" name="terms" type="checkbox" class="mt-1 h-5 w-5 text-[var(--color-vck-red)] focus:ring-[var(--color-vck-red)] border-gray-300 rounded" required>
+                            <input id="terms" name="terms" type="checkbox" class="mt-1 h-5 w-5 text-[var(--color-mjk-red)] focus:ring-[var(--color-mjk-red)] border-gray-300 rounded" required>
                             <label for="terms" class="ml-3 text-base text-gray-700">
                                 {{ __('site.join.terms_agreement') }} <span class="text-red-500">*</span>
                             </label>
@@ -570,7 +570,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         if (verifyBtn) {
-            verifyBtn.classList.remove('bg-[var(--color-vck-blue)]', 'hover:bg-blue-700');
+            verifyBtn.classList.remove('bg-[var(--color-mjk-blue)]', 'hover:bg-blue-700');
             verifyBtn.classList.add('bg-green-600', 'cursor-not-allowed');
             verifyBtn.innerHTML = '<svg class="w-4 h-4 inline-block mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Mobile Verified';
             verifyBtn.disabled = true;

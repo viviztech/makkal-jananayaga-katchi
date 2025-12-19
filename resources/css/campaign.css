@@ -10,19 +10,19 @@
     }
 
     .btn-campaign-primary {
-        @apply bg-[var(--color-vck-red)] text-white hover:bg-red-700 hover:scale-105 hover:shadow-2xl;
+        @apply bg-[var(--color-mjk-red)] text-white hover:bg-red-700 hover:scale-105 hover:shadow-2xl;
     }
 
     .btn-campaign-secondary {
-        @apply bg-[var(--color-vck-blue)] text-white hover:bg-blue-900 hover:scale-105 hover:shadow-2xl;
+        @apply bg-[var(--color-mjk-blue)] text-white hover:bg-blue-900 hover:scale-105 hover:shadow-2xl;
     }
 
     .btn-campaign-outline {
-        @apply border-2 border-white text-white hover:bg-white hover:text-[var(--color-vck-red)] hover:scale-105;
+        @apply border-2 border-white text-white hover:bg-white hover:text-[var(--color-mjk-red)] hover:scale-105;
     }
 
     .btn-campaign-cta {
-        @apply bg-gradient-to-r from-[var(--color-vck-orange)] to-[var(--color-vck-red)] text-white hover:scale-105 hover:shadow-2xl relative overflow-hidden;
+        @apply bg-gradient-to-r from-[var(--color-mjk-orange)] to-[var(--color-mjk-red)] text-white hover:scale-105 hover:shadow-2xl relative overflow-hidden;
     }
 
     .btn-campaign-cta::before {
@@ -46,7 +46,7 @@
     }
 
     .card-campaign-bordered {
-        @apply border-2 border-gray-200 hover:border-[var(--color-vck-red)];
+        @apply border-2 border-gray-200 hover:border-[var(--color-mjk-red)];
     }
 
     /* Impact Cards */
@@ -67,19 +67,19 @@
     }
 
     .impact-card-primary .impact-card-icon {
-        @apply bg-red-100 text-[var(--color-vck-red)];
+        @apply bg-red-100 text-[var(--color-mjk-red)];
     }
 
     .impact-card-secondary .impact-card-icon {
-        @apply bg-blue-100 text-[var(--color-vck-blue)];
+        @apply bg-blue-100 text-[var(--color-mjk-blue)];
     }
 
     .impact-card-success .impact-card-icon {
-        @apply bg-green-100 text-[var(--color-vck-green)];
+        @apply bg-green-100 text-[var(--color-mjk-green)];
     }
 
     .impact-card-warning .impact-card-icon {
-        @apply bg-yellow-100 text-[var(--color-vck-yellow)];
+        @apply bg-yellow-100 text-[var(--color-mjk-yellow)];
     }
 
     /* Campaign Hero */
@@ -88,7 +88,7 @@
     }
 
     .hero-campaign-overlay {
-        @apply absolute inset-0 bg-gradient-to-r from-black/80 via-[var(--color-vck-red)]/70 to-[var(--color-vck-blue)]/60;
+        @apply absolute inset-0 bg-gradient-to-r from-black/80 via-[var(--color-mjk-red)]/70 to-[var(--color-mjk-blue)]/60;
     }
 
     .hero-campaign-content {
@@ -105,7 +105,7 @@
 
     /* Rally Banner */
     .rally-banner {
-        @apply bg-gradient-to-r from-[var(--color-vck-yellow)] to-[var(--color-vck-orange)] rounded-2xl shadow-2xl p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6;
+        @apply bg-gradient-to-r from-[var(--color-mjk-yellow)] to-[var(--color-mjk-orange)] rounded-2xl shadow-2xl p-6 md:p-8 flex flex-col md:flex-row items-center justify-between gap-6;
     }
 
     .rally-banner-content {
@@ -142,15 +142,15 @@
     }
 
     .stat-campaign-primary .stat-campaign-value {
-        @apply text-[var(--color-vck-red)];
+        @apply text-[var(--color-mjk-red)];
     }
 
     .stat-campaign-secondary .stat-campaign-value {
-        @apply text-[var(--color-vck-blue)];
+        @apply text-[var(--color-mjk-blue)];
     }
 
     .stat-campaign-accent .stat-campaign-value {
-        @apply text-[var(--color-vck-orange)];
+        @apply text-[var(--color-mjk-orange)];
     }
 
     /* Campaign Forms */
@@ -167,7 +167,7 @@
     }
 
     .form-input-campaign {
-        @apply w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-[var(--color-vck-red)] focus:ring-2 focus:ring-[var(--color-vck-red)]/20 outline-none transition-all duration-200 text-lg;
+        @apply w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-[var(--color-mjk-red)] focus:ring-2 focus:ring-[var(--color-mjk-red)]/20 outline-none transition-all duration-200 text-lg;
     }
 
     .form-input-campaign:focus {
@@ -175,7 +175,7 @@
     }
 
     .form-textarea-campaign {
-        @apply w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-[var(--color-vck-red)] focus:ring-2 focus:ring-[var(--color-vck-red)]/20 outline-none transition-all duration-200 text-lg min-h-[120px] resize-y;
+        @apply w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-[var(--color-mjk-red)] focus:ring-2 focus:ring-[var(--color-mjk-red)]/20 outline-none transition-all duration-200 text-lg min-h-[120px] resize-y;
     }
 
     .form-textarea-campaign:focus {
@@ -200,7 +200,7 @@
     }
 
     .tab-campaign-active {
-        @apply bg-[var(--color-vck-red)] text-white shadow-lg;
+        @apply bg-[var(--color-mjk-red)] text-white shadow-lg;
     }
 
     /* Campaign Navbar */
@@ -209,7 +209,7 @@
     }
 
     .navbar-campaign-top {
-        @apply bg-gradient-to-r from-[var(--color-vck-red)] via-[var(--color-vck-red)] to-[var(--color-vck-blue)] text-white py-2 px-4;
+        @apply bg-gradient-to-r from-[var(--color-mjk-red)] via-[var(--color-mjk-red)] to-[var(--color-mjk-blue)] text-white py-2 px-4;
     }
 
     .navbar-campaign-main {
@@ -229,12 +229,12 @@
     }
 
     .navbar-campaign-link-active {
-        @apply bg-red-50 text-[var(--color-vck-red)];
+        @apply bg-red-50 text-[var(--color-mjk-red)];
     }
 
     /* Campaign Footer */
     .footer-campaign {
-        @apply bg-gradient-to-br from-[var(--color-vck-red)] via-[var(--color-vck-red)] to-[var(--color-vck-blue)] text-white rounded-3xl mx-auto mt-20 p-10 lg:p-16 max-w-[90%];
+        @apply bg-gradient-to-br from-[var(--color-mjk-red)] via-[var(--color-mjk-red)] to-[var(--color-mjk-blue)] text-white rounded-3xl mx-auto mt-20 p-10 lg:p-16 max-w-[90%];
     }
 
     .footer-campaign-section {
@@ -258,7 +258,7 @@
     }
 
     .footer-campaign-subscribe button {
-        @apply bg-[var(--color-vck-blue)] text-white px-8 py-3 rounded-r-lg font-semibold hover:bg-blue-900 transition-colors;
+        @apply bg-[var(--color-mjk-blue)] text-white px-8 py-3 rounded-r-lg font-semibold hover:bg-blue-900 transition-colors;
     }
 
     .footer-campaign-links {
@@ -278,7 +278,7 @@
     }
 
     .footer-campaign-social a {
-        @apply w-12 h-12 rounded-full bg-white/10 hover:bg-white hover:text-[var(--color-vck-red)] flex items-center justify-center transition-all duration-300 hover:scale-110;
+        @apply w-12 h-12 rounded-full bg-white/10 hover:bg-white hover:text-[var(--color-mjk-red)] flex items-center justify-center transition-all duration-300 hover:scale-110;
     }
 
     .footer-campaign-bottom {
@@ -328,7 +328,7 @@
     }
 
     .dropdown-campaign-item-active {
-        @apply bg-red-50 text-[var(--color-vck-red)];
+        @apply bg-red-50 text-[var(--color-mjk-red)];
     }
 
     /* Mobile Menu */
@@ -366,27 +366,27 @@
 
     /* Utility Classes */
     .gradient-campaign-primary {
-        @apply bg-gradient-to-r from-[var(--color-vck-red)] to-[var(--color-vck-orange)];
+        @apply bg-gradient-to-r from-[var(--color-mjk-red)] to-[var(--color-mjk-orange)];
     }
 
     .gradient-campaign-secondary {
-        @apply bg-gradient-to-r from-[var(--color-vck-blue)] to-[var(--color-vck-blue)];
+        @apply bg-gradient-to-r from-[var(--color-mjk-blue)] to-[var(--color-mjk-blue)];
     }
 
     .gradient-campaign-hero {
-        @apply bg-gradient-to-br from-[var(--color-vck-red)] via-[var(--color-vck-orange)] to-[var(--color-vck-blue)];
+        @apply bg-gradient-to-br from-[var(--color-mjk-red)] via-[var(--color-mjk-orange)] to-[var(--color-mjk-blue)];
     }
 
     .text-campaign-primary {
-        @apply text-[var(--color-vck-red)];
+        @apply text-[var(--color-mjk-red)];
     }
 
     .text-campaign-secondary {
-        @apply text-[var(--color-vck-blue)];
+        @apply text-[var(--color-mjk-blue)];
     }
 
     .border-campaign-primary {
-        @apply border-[var(--color-vck-red)];
+        @apply border-[var(--color-mjk-red)];
     }
 }
 

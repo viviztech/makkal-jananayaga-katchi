@@ -182,7 +182,7 @@
                             </p>
                             <h3 class="text-xl font-bold mb-3 text-gray-900">{{ $newsTitle }}</h3>
                             <p class="text-gray-600 mb-4 line-clamp-3">{{ Str::limit(strip_tags($newsContent), 150) }}</p>
-                            <a href="{{ route('latest-news') }}" class="text-[var(--color-vck-red)] font-semibold hover:underline">
+                            <a href="{{ route('latest-news') }}" class="text-[var(--color-mjk-red)] font-semibold hover:underline">
                                 {{ __('site.buttons.read_more') }} →
                             </a>
                         </div>
@@ -225,7 +225,7 @@
                             </p>
                             <h3 class="text-xl font-bold mb-3 text-gray-900">{{ $pressTitle }}</h3>
                             <p class="text-gray-600 mb-4 line-clamp-3">{{ Str::limit(strip_tags($pressContent), 150) }}</p>
-                            <a href="{{ route('press-releases') }}" class="text-[var(--color-vck-red)] font-semibold hover:underline">
+                            <a href="{{ route('press-releases') }}" class="text-[var(--color-mjk-red)] font-semibold hover:underline">
                                 {{ __('site.buttons.read_more') }} →
                             </a>
                         </div>
@@ -267,12 +267,12 @@
                     @endphp
                     <div class="card-campaign" data-aos="fade-up">
                         <div class="p-6">
-                            <div class="bg-[var(--color-vck-orange)] text-white text-sm font-bold px-3 py-1 rounded-full inline-block mb-3">
+                            <div class="bg-[var(--color-mjk-orange)] text-white text-sm font-bold px-3 py-1 rounded-full inline-block mb-3">
                                 {{ $event->event_date ? $event->event_date->format('M d, Y') : $event->created_at->format('M d, Y') }}
                             </div>
                             <h3 class="text-xl font-bold mb-3 text-gray-900">{{ $eventTitle }}</h3>
                             <p class="text-gray-600 mb-4 line-clamp-2">{{ Str::limit(strip_tags($eventContent), 100) }}</p>
-                            <a href="{{ route('events') }}" class="text-[var(--color-vck-red)] font-semibold hover:underline">
+                            <a href="{{ route('events') }}" class="text-[var(--color-mjk-red)] font-semibold hover:underline">
                                 {{ __('site.buttons.learn_more') }} →
                             </a>
                         </div>
@@ -294,7 +294,7 @@
 </section>
 
 {{-- Join the Movement CTA Section --}}
-<section class="bg-gradient-to-r from-[var(--color-vck-red)] to-[var(--color-vck-blue)] py-20">
+<section class="bg-gradient-to-r from-[var(--color-mjk-red)] to-[var(--color-mjk-blue)] py-20">
     <div class="max-w-4xl mx-auto px-4 text-center" data-aos="zoom-in">
         <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-6">
             {{ __('site.cta.join_movement') }}

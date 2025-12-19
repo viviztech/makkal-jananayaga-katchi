@@ -5,7 +5,7 @@
 @section('content')
 
 {{-- Page Hero --}}
-<section class="bg-gradient-to-br from-[var(--color-vck-red)] via-[var(--color-vck-red)] to-[var(--color-vck-blue)] py-20">
+<section class="bg-gradient-to-br from-[var(--color-mjk-red)] via-[var(--color-mjk-red)] to-[var(--color-mjk-blue)] py-20">
     <div class="max-w-7xl mx-auto px-4 text-center" data-aos="fade-up">
         <h1 class="text-5xl md:text-6xl font-extrabold text-white mb-6">
             {{ __('site.ideology.title') }}
@@ -131,7 +131,7 @@
             </div>
             <div data-aos="fade-left" data-aos-delay="200">
                 <div class="relative">
-                    <div class="absolute -inset-4 bg-gradient-to-r from-[var(--color-vck-red)] to-[var(--color-vck-blue)] rounded-2xl opacity-20 blur-xl"></div>
+                    <div class="absolute -inset-4 bg-gradient-to-r from-[var(--color-mjk-red)] to-[var(--color-mjk-blue)] rounded-2xl opacity-20 blur-xl"></div>
                     <img
                         src="{{ asset('assets/images/ideology-vision.jpg') }}"
                         alt="{{ __('site.ideology.our_vision') }}"
@@ -150,7 +150,7 @@
         <div class="grid md:grid-cols-2 gap-12 items-center">
             <div data-aos="fade-right" class="order-2 md:order-1">
                 <div class="relative">
-                    <div class="absolute -inset-4 bg-gradient-to-r from-[var(--color-vck-blue)] to-[var(--color-vck-red)] rounded-2xl opacity-20 blur-xl"></div>
+                    <div class="absolute -inset-4 bg-gradient-to-r from-[var(--color-mjk-blue)] to-[var(--color-mjk-red)] rounded-2xl opacity-20 blur-xl"></div>
                     <img
                         src="{{ asset('assets/images/ideology-mission.jpg') }}"
                         alt="{{ __('site.ideology.our_mission') }}"
@@ -184,7 +184,7 @@
             @for($i = 1; $i <= 6; $i++)
                 <div class="flex gap-4" data-aos="fade-up" data-aos-delay="{{ $i * 100 }}">
                     <div class="flex-shrink-0">
-                        <div class="w-12 h-12 rounded-full bg-[var(--color-vck-red)] text-white flex items-center justify-center font-bold text-xl">
+                        <div class="w-12 h-12 rounded-full bg-[var(--color-mjk-red)] text-white flex items-center justify-center font-bold text-xl">
                             {{ $i }}
                         </div>
                     </div>
@@ -203,7 +203,7 @@
 </section>
 
 {{-- CTA Section --}}
-<section class="bg-gradient-to-r from-[var(--color-vck-red)] to-[var(--color-vck-blue)] py-20">
+<section class="bg-gradient-to-r from-[var(--color-mjk-red)] to-[var(--color-mjk-blue)] py-20">
     <div class="max-w-4xl mx-auto px-4 text-center" data-aos="zoom-in">
         <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-6">
             {{ __('site.ideology.join_movement_cta') }}

@@ -5,7 +5,7 @@
 @section('content')
 
 {{-- Page Hero --}}
-<section class="bg-gradient-to-br from-[var(--color-vck-red)] via-[var(--color-vck-red)] to-[var(--color-vck-blue)] py-20">
+<section class="bg-gradient-to-br from-[var(--color-mjk-red)] via-[var(--color-mjk-red)] to-[var(--color-mjk-blue)] py-20">
     <div class="max-w-7xl mx-auto px-4 text-center" data-aos="fade-up">
         <h1 class="text-5xl md:text-6xl font-extrabold text-white mb-6">
             {{ __('site.history.title') }}
@@ -27,7 +27,7 @@
             {{-- 1972 - Formation --}}
             <div class="grid md:grid-cols-2 gap-12 items-center" data-aos="fade-right">
                 <div>
-                    <div class="inline-block px-6 py-2 bg-[var(--color-vck-red)] text-white text-xl font-bold rounded-full mb-4">
+                    <div class="inline-block px-6 py-2 bg-[var(--color-mjk-red)] text-white text-xl font-bold rounded-full mb-4">
                         1972
                     </div>
                     <h3 class="text-3xl font-bold mb-4 text-gray-900">
@@ -38,7 +38,7 @@
                     </p>
                 </div>
                 <div class="relative" data-aos="fade-left" data-aos-delay="200">
-                    <div class="absolute -inset-4 bg-gradient-to-r from-[var(--color-vck-red)] to-[var(--color-vck-orange)] rounded-2xl opacity-20 blur-xl"></div>
+                    <div class="absolute -inset-4 bg-gradient-to-r from-[var(--color-mjk-red)] to-[var(--color-mjk-orange)] rounded-2xl opacity-20 blur-xl"></div>
                     <img
                         src="{{ asset('assets/images/history/1972.jpg') }}"
                         alt="1972"
@@ -51,7 +51,7 @@
             {{-- 1977 - Electoral Debut --}}
             <div class="grid md:grid-cols-2 gap-12 items-center" data-aos="fade-left">
                 <div class="order-2 md:order-1 relative" data-aos="fade-right" data-aos-delay="200">
-                    <div class="absolute -inset-4 bg-gradient-to-r from-[var(--color-vck-blue)] to-[var(--color-vck-red)] rounded-2xl opacity-20 blur-xl"></div>
+                    <div class="absolute -inset-4 bg-gradient-to-r from-[var(--color-mjk-blue)] to-[var(--color-mjk-red)] rounded-2xl opacity-20 blur-xl"></div>
                     <img
                         src="{{ asset('assets/images/history/1977.jpg') }}"
                         alt="1977"
@@ -60,7 +60,7 @@
                     />
                 </div>
                 <div class="order-1 md:order-2">
-                    <div class="inline-block px-6 py-2 bg-[var(--color-vck-blue)] text-white text-xl font-bold rounded-full mb-4">
+                    <div class="inline-block px-6 py-2 bg-[var(--color-mjk-blue)] text-white text-xl font-bold rounded-full mb-4">
                         1977
                     </div>
                     <h3 class="text-3xl font-bold mb-4 text-gray-900">
@@ -75,7 +75,7 @@
             {{-- 1989 - National Recognition --}}
             <div class="grid md:grid-cols-2 gap-12 items-center" data-aos="fade-right">
                 <div>
-                    <div class="inline-block px-6 py-2 bg-[var(--color-vck-green)] text-white text-xl font-bold rounded-full mb-4">
+                    <div class="inline-block px-6 py-2 bg-[var(--color-mjk-green)] text-white text-xl font-bold rounded-full mb-4">
                         1989
                     </div>
                     <h3 class="text-3xl font-bold mb-4 text-gray-900">
@@ -86,7 +86,7 @@
                     </p>
                 </div>
                 <div class="relative" data-aos="fade-left" data-aos-delay="200">
-                    <div class="absolute -inset-4 bg-gradient-to-r from-[var(--color-vck-green)] to-[var(--color-vck-blue)] rounded-2xl opacity-20 blur-xl"></div>
+                    <div class="absolute -inset-4 bg-gradient-to-r from-[var(--color-mjk-green)] to-[var(--color-mjk-blue)] rounded-2xl opacity-20 blur-xl"></div>
                     <img
                         src="{{ asset('assets/images/history/1989.jpg') }}"
                         alt="1989"
@@ -99,7 +99,7 @@
             {{-- 2004 - Alliance & Growth --}}
             <div class="grid md:grid-cols-2 gap-12 items-center" data-aos="fade-left">
                 <div class="order-2 md:order-1 relative" data-aos="fade-right" data-aos-delay="200">
-                    <div class="absolute -inset-4 bg-gradient-to-r from-[var(--color-vck-orange)] to-[var(--color-vck-red)] rounded-2xl opacity-20 blur-xl"></div>
+                    <div class="absolute -inset-4 bg-gradient-to-r from-[var(--color-mjk-orange)] to-[var(--color-mjk-red)] rounded-2xl opacity-20 blur-xl"></div>
                     <img
                         src="{{ asset('assets/images/history/2004.jpg') }}"
                         alt="2004"
@@ -108,7 +108,7 @@
                     />
                 </div>
                 <div class="order-1 md:order-2">
-                    <div class="inline-block px-6 py-2 bg-[var(--color-vck-orange)] text-white text-xl font-bold rounded-full mb-4">
+                    <div class="inline-block px-6 py-2 bg-[var(--color-mjk-orange)] text-white text-xl font-bold rounded-full mb-4">
                         2004
                     </div>
                     <h3 class="text-3xl font-bold mb-4 text-gray-900">
@@ -123,7 +123,7 @@
             {{-- Present Day --}}
             <div class="grid md:grid-cols-2 gap-12 items-center" data-aos="fade-right">
                 <div>
-                    <div class="inline-block px-6 py-2 bg-[var(--color-vck-red)] text-white text-xl font-bold rounded-full mb-4">
+                    <div class="inline-block px-6 py-2 bg-[var(--color-mjk-red)] text-white text-xl font-bold rounded-full mb-4">
                         {{ date('Y') }}
                     </div>
                     <h3 class="text-3xl font-bold mb-4 text-gray-900">
@@ -134,7 +134,7 @@
                     </p>
                 </div>
                 <div class="relative" data-aos="fade-left" data-aos-delay="200">
-                    <div class="absolute -inset-4 bg-gradient-to-r from-[var(--color-vck-red)] to-[var(--color-vck-blue)] rounded-2xl opacity-20 blur-xl"></div>
+                    <div class="absolute -inset-4 bg-gradient-to-r from-[var(--color-mjk-red)] to-[var(--color-mjk-blue)] rounded-2xl opacity-20 blur-xl"></div>
                     <img
                         src="{{ asset('assets/images/history/present.jpg') }}"
                         alt="Present Day"
@@ -213,7 +213,7 @@
             </div>
             <div data-aos="fade-left" data-aos-delay="200">
                 <div class="relative">
-                    <div class="absolute -inset-4 bg-gradient-to-r from-[var(--color-vck-red)] to-[var(--color-vck-blue)] rounded-2xl opacity-20 blur-xl"></div>
+                    <div class="absolute -inset-4 bg-gradient-to-r from-[var(--color-mjk-red)] to-[var(--color-mjk-blue)] rounded-2xl opacity-20 blur-xl"></div>
                     <img
                         src="{{ asset('assets/images/history/legacy.jpg') }}"
                         alt="{{ __('site.history.legacy_title') }}"
@@ -227,7 +227,7 @@
 </section>
 
 {{-- CTA Section --}}
-<section class="bg-gradient-to-r from-[var(--color-vck-red)] to-[var(--color-vck-blue)] py-20">
+<section class="bg-gradient-to-r from-[var(--color-mjk-red)] to-[var(--color-mjk-blue)] py-20">
     <div class="max-w-4xl mx-auto px-4 text-center" data-aos="zoom-in">
         <h2 class="text-4xl md:text-5xl font-extrabold text-white mb-6">
             {{ __('site.history.be_part_cta') }}
