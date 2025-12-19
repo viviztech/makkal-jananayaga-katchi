@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" data-theme="vck">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -42,10 +42,6 @@
     <meta property="twitter:image" content="{{ url('/assets/images/about/vck-about.webp') }}">
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-    {{-- Tailwind CSS --}}
-    <script src="https://cdn.tailwindcss.com"></script>
-    {{-- Flowbite CSS --}}
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
     {{-- AOS CSS --}}
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     {{-- Google Fonts --}}
@@ -386,10 +382,6 @@ gap: 40px;
 
     {{-- Footer --}}
     @include('layouts.partials.footer')
-
-    {{-- Flowbite JS --}}
-
-    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
 
     {{-- AOS JS --}}
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>

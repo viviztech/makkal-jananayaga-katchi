@@ -1,27 +1,36 @@
 @import "tailwindcss";
 
-@plugin "flowbite/plugin";
-
-
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
 @source '../../storage/framework/views/*.php';
 @source '../**/*.blade.php';
 @source '../**/*.js';
-@source "../node_modules/flowbite";
 
 @theme {
-    /* Existing font definition */
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    /* Campaign Color System */
+    --color-vck-red: #dc2626;
+    --color-vck-blue: #1e40af;
+    --color-vck-green: #16a34a;
+    --color-vck-yellow: #eab308;
+    --color-vck-orange: #ea580c;
+
+    /* Semantic Political Colors */
+    --color-movement: #dc2626;
+    --color-unity: #1e40af;
+    --color-progress: #16a34a;
+    --color-empowerment: #eab308;
+    --color-rally: #ea580c;
+
+    /* Typography - Mukta Malar for Tamil support */
+    --font-sans: 'Mukta Malar', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
 
-    /* --- ADDED SHIMMER ANIMATION --- */
+    /* Shimmer Animation (keep existing) */
     @keyframes shimmer {
         '0%': { transform: 'translateX(-100%)' },
         '100%': { transform: 'translateX(100%)' }
     }
-    
+
     --animate-shimmer: shimmer 3s linear infinite;
-    /* --- END OF ADDED CODE --- */
 }
 
 /* --- ADDED SHIMMER UTILITY --- */

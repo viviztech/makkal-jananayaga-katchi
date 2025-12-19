@@ -19,7 +19,6 @@
         "vite": "^7.0.4"
     },
     "dependencies": {
-        "flowbite": "^3.1.2",
         "pdfjs-dist": "^5.4.449",
         "puppeteer": "^24.30.0"
     }
