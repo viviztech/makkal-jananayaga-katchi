@@ -31,9 +31,9 @@
             </div>
 
             <div class="stat-campaign stat-campaign-secondary" data-aos="flip-up" data-aos-delay="300">
-                <div class="stat-campaign-value">{{ \App\Models\ElectedMember::count() }}</div>
-                <div class="stat-campaign-title">{{ __('site.stats.elected_representatives') }}</div>
-                <div class="stat-campaign-desc">{{ __('site.stats.representatives_desc') }}</div>
+                <div class="stat-campaign-value">{{ \App\Models\Member::count() }}</div>
+                <div class="stat-campaign-title">{{ __('site.stats.total_members') }}</div>
+                <div class="stat-campaign-desc">{{ __('site.stats.members_registered') }}</div>
             </div>
 
             <div class="stat-campaign stat-campaign-accent" data-aos="flip-up" data-aos-delay="400">
@@ -100,18 +100,28 @@
 
 {{-- Rally Banner Section --}}
 @php
-    $upcomingEvent = \App\Models\Event::where('event_date', '>=', now())
-        ->orderBy('event_date', 'asc')
-        ->first();
+    // Get upcoming event from Media with category 'events' if it exists
+    $eventsCategory = \App\Models\Category::where('slug', 'events')->orWhere('name_en', 'Events')->first();
+    $upcomingEvent = null;
+
+    if ($eventsCategory) {
+        $upcomingEvent = \App\Models\Media::where('category_id', $eventsCategory->id)
+            ->where('event_date', '>=', now())
+            ->orderBy('event_date', 'asc')
+            ->first();
+    }
 @endphp
 
 @if($upcomingEvent)
 <section class="bg-gray-50 py-12">
     <div class="max-w-7xl mx-auto px-4">
+        @php
+            $eventTitle = app()->getLocale() === 'ta' ? $upcomingEvent->title_ta : $upcomingEvent->title_en;
+        @endphp
         <x-rally-banner
-            :title="$upcomingEvent->title"
+            :title="$eventTitle"
             :date="$upcomingEvent->event_date->format('M d, Y')"
-            :location="$upcomingEvent->location"
+            :location="''"
             :ctaUrl="route('events')"
             :ctaText="__('site.buttons.learn_more')"
         />
@@ -143,27 +153,33 @@
         <div id="tab-news" class="tab-content">
             <div class="grid md:grid-cols-3 gap-8">
                 @php
-                    $latestNews = \App\Models\Media::where('type', 'news')
-                        ->latest()
-                        ->take(3)
-                        ->get();
+                    $newsCategory = \App\Models\Category::where('slug', 'news')
+                        ->orWhere('name_en', 'LIKE', '%News%')
+                        ->first();
+                    $latestNews = $newsCategory
+                        ? \App\Models\Media::where('category_id', $newsCategory->id)->latest()->take(3)->get()
+                        : collect();
                 @endphp
 
                 @forelse($latestNews as $news)
+                    @php
+                        $newsTitle = app()->getLocale() === 'ta' ? $news->title_ta : $news->title_en;
+                        $newsContent = app()->getLocale() === 'ta' ? $news->content_ta : $news->content_en;
+                    @endphp
                     <div class="card-campaign" data-aos="fade-up" data-aos-delay="{{ 200 + $loop->index * 100 }}">
                         @if($news->featured_image)
                             <img
-                                src="{{ Storage::url($news->featured_image) }}"
-                                alt="{{ $news->title }}"
+                                src="{{ $news->featured_image_url }}"
+                                alt="{{ $newsTitle }}"
                                 class="w-full h-48 object-cover"
                             />
                         @endif
                         <div class="p-6">
                             <p class="text-sm text-gray-500 mb-2">
-                                {{ $news->published_at ? $news->published_at->format('M d, Y') : '' }}
+                                {{ $news->created_at->format('M d, Y') }}
                             </p>
-                            <h3 class="text-xl font-bold mb-3 text-gray-900">{{ $news->title }}</h3>
-                            <p class="text-gray-600 mb-4 line-clamp-3">{{ Str::limit($news->description, 150) }}</p>
+                            <h3 class="text-xl font-bold mb-3 text-gray-900">{{ $newsTitle }}</h3>
+                            <p class="text-gray-600 mb-4 line-clamp-3">{{ Str::limit(strip_tags($newsContent), 150) }}</p>
                             <a href="{{ route('latest-news') }}" class="text-[var(--color-vck-red)] font-semibold hover:underline">
                                 {{ __('site.buttons.read_more') }} →
                             </a>
@@ -187,20 +203,26 @@
         <div id="tab-press" class="tab-content hidden">
             <div class="grid md:grid-cols-3 gap-8">
                 @php
-                    $pressReleases = \App\Models\Media::where('type', 'press_release')
-                        ->latest()
-                        ->take(3)
-                        ->get();
+                    $pressCategory = \App\Models\Category::where('slug', 'press-releases')
+                        ->orWhere('name_en', 'LIKE', '%Press%')
+                        ->first();
+                    $pressReleases = $pressCategory
+                        ? \App\Models\Media::where('category_id', $pressCategory->id)->latest()->take(3)->get()
+                        : collect();
                 @endphp
 
                 @forelse($pressReleases as $press)
+                    @php
+                        $pressTitle = app()->getLocale() === 'ta' ? $press->title_ta : $press->title_en;
+                        $pressContent = app()->getLocale() === 'ta' ? $press->content_ta : $press->content_en;
+                    @endphp
                     <div class="card-campaign" data-aos="fade-up">
                         <div class="p-6">
                             <p class="text-sm text-gray-500 mb-2">
-                                {{ $press->published_at ? $press->published_at->format('M d, Y') : '' }}
+                                {{ $press->created_at->format('M d, Y') }}
                             </p>
-                            <h3 class="text-xl font-bold mb-3 text-gray-900">{{ $press->title }}</h3>
-                            <p class="text-gray-600 mb-4 line-clamp-3">{{ Str::limit($press->description, 150) }}</p>
+                            <h3 class="text-xl font-bold mb-3 text-gray-900">{{ $pressTitle }}</h3>
+                            <p class="text-gray-600 mb-4 line-clamp-3">{{ Str::limit(strip_tags($pressContent), 150) }}</p>
                             <a href="{{ route('press-releases') }}" class="text-[var(--color-vck-red)] font-semibold hover:underline">
                                 {{ __('site.buttons.read_more') }} →
                             </a>
@@ -224,27 +246,30 @@
         <div id="tab-events" class="tab-content hidden">
             <div class="grid md:grid-cols-3 gap-8">
                 @php
-                    $upcomingEvents = \App\Models\Event::where('event_date', '>=', now())
-                        ->orderBy('event_date', 'asc')
-                        ->take(3)
-                        ->get();
+                    $eventsTabCategory = \App\Models\Category::where('slug', 'events')
+                        ->orWhere('name_en', 'LIKE', '%Event%')
+                        ->first();
+                    $upcomingEvents = $eventsTabCategory
+                        ? \App\Models\Media::where('category_id', $eventsTabCategory->id)
+                            ->where('event_date', '>=', now())
+                            ->orderBy('event_date', 'asc')
+                            ->take(3)
+                            ->get()
+                        : collect();
                 @endphp
 
                 @forelse($upcomingEvents as $event)
+                    @php
+                        $eventTitle = app()->getLocale() === 'ta' ? $event->title_ta : $event->title_en;
+                        $eventContent = app()->getLocale() === 'ta' ? $event->content_ta : $event->content_en;
+                    @endphp
                     <div class="card-campaign" data-aos="fade-up">
                         <div class="p-6">
                             <div class="bg-[var(--color-vck-orange)] text-white text-sm font-bold px-3 py-1 rounded-full inline-block mb-3">
-                                {{ $event->event_date->format('M d, Y') }}
+                                {{ $event->event_date ? $event->event_date->format('M d, Y') : $event->created_at->format('M d, Y') }}
                             </div>
-                            <h3 class="text-xl font-bold mb-3 text-gray-900">{{ $event->title }}</h3>
-                            <p class="text-gray-600 mb-2">
-                                <svg class="w-4 h-4 inline-block mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
-                                </svg>
-                                {{ $event->location }}
-                            </p>
-                            <p class="text-gray-600 mb-4 line-clamp-2">{{ Str::limit($event->description, 100) }}</p>
+                            <h3 class="text-xl font-bold mb-3 text-gray-900">{{ $eventTitle }}</h3>
+                            <p class="text-gray-600 mb-4 line-clamp-2">{{ Str::limit(strip_tags($eventContent), 100) }}</p>
                             <a href="{{ route('events') }}" class="text-[var(--color-vck-red)] font-semibold hover:underline">
                                 {{ __('site.buttons.learn_more') }} →
                             </a>
