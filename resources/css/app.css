@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+@plugin "flowbite/plugin";
+
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+@source "../node_modules/flowbite";
+
+@theme {
+    /* Existing font definition */
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+        'Segoe UI Symbol', 'Noto Color Emoji';
+
+    /* --- ADDED SHIMMER ANIMATION --- */
+    @keyframes shimmer {
+        '0%': { transform: 'translateX(-100%)' },
+        '100%': { transform: 'translateX(100%)' }
+    }
+    
+    --animate-shimmer: shimmer 3s linear infinite;
+    /* --- END OF ADDED CODE --- */
+}
+
+/* --- ADDED SHIMMER UTILITY --- */
+@layer utilities {
+  .shimmer-effect {
+    @apply relative overflow-hidden;
+  }
+
+  .shimmer-effect::before {
+    content: '';
+    animation: var(--animate-shimmer);
+    @apply absolute inset-0 -translate-x-full;
+    @apply bg-gradient-to-r from-transparent via-white/20 to-transparent;
+    pointer-events: none;
+  }
+}
+/* --- END OF ADDED CODE --- */

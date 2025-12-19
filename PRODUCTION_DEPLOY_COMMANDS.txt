@@ -1,0 +1,134 @@
+═══════════════════════════════════════════════════════════════
+  SPATIE LARAVEL PDF - PRODUCTION DEPLOYMENT COMMANDS
+═══════════════════════════════════════════════════════════════
+
+📦 STEP 1: Upload Setup Script
+──────────────────────────────────────────────────────────────
+# From your local machine:
+scp setup-pdf-production.sh user@your-server.com:/var/www/your-project/
+
+═══════════════════════════════════════════════════════════════
+
+🚀 STEP 2: SSH into Production Server
+──────────────────────────────────────────────────────────────
+ssh user@your-server.com
+cd /var/www/your-project
+
+═══════════════════════════════════════════════════════════════
+
+⚙️  STEP 3: Run Setup Script
+──────────────────────────────────────────────────────────────
+chmod +x setup-pdf-production.sh
+sudo ./setup-pdf-production.sh
+
+# This installs:
+# ✓ Chromium browser
+# ✓ Node.js and NPM
+# ✓ Puppeteer
+# ✓ Tamil fonts
+# ✓ System dependencies
+# ✓ Sets permissions
+# ✓ Updates .env
+
+═══════════════════════════════════════════════════════════════
+
+📥 STEP 4: Deploy Updated Code
+──────────────────────────────────────────────────────────────
+git pull origin main
+
+# Or if you haven't committed locally yet:
+# git add app/Http/Controllers/ApplicationPdfController.php
+# git add app/Http/Controllers/MemberIdCardController.php
+# git commit -m "Fix: Add production support for PDF generation"
+# git push origin main
+
+═══════════════════════════════════════════════════════════════
+
+🧹 STEP 5: Clear Caches
+──────────────────────────────────────────────────────────────
+php artisan config:clear
+php artisan cache:clear
+php artisan view:clear
+php artisan route:clear
+
+═══════════════════════════════════════════════════════════════
+
+✅ STEP 6: Verify Installation
+──────────────────────────────────────────────────────────────
+# Check Chromium
+chromium-browser --version
+
+# Check Node.js
+node --version
+
+# Check .env
+grep "CHROMIUM_PATH\|NODE_PATH" .env
+
+# Check permissions
+ls -la storage/
+
+═══════════════════════════════════════════════════════════════
+
+🧪 STEP 7: Test PDF Generation
+──────────────────────────────────────────────────────────────
+# In browser, visit:
+https://your-domain.com/applications/1/pdf
+https://your-domain.com/members/1/id-card/full
+
+# Watch logs in real-time:
+tail -f storage/logs/laravel.log
+
+═══════════════════════════════════════════════════════════════
+
+🐛 IF ISSUES OCCUR - Quick Diagnostics
+──────────────────────────────────────────────────────────────
+# 1. Check Chromium
+which chromium-browser
+chromium-browser --headless --dump-dom https://google.com
+
+# 2. Check logs
+tail -100 storage/logs/laravel.log | grep -i "pdf\|chromium"
+
+# 3. Check permissions
+sudo chown -R www-data:www-data storage/
+sudo chmod -R 775 storage/
+
+# 4. Reinstall Chromium if needed
+sudo apt-get install --reinstall chromium-browser
+
+═══════════════════════════════════════════════════════════════
+
+📋 MANUAL INSTALLATION (if script fails)
+──────────────────────────────────────────────────────────────
+# Ubuntu/Debian:
+sudo apt-get update
+sudo apt-get install -y chromium-browser nodejs npm fonts-tamil
+
+# Install Puppeteer:
+npm install puppeteer
+
+# Add to .env:
+echo "CHROMIUM_PATH=/usr/bin/chromium-browser" >> .env
+echo "NODE_PATH=/usr/bin/node" >> .env
+echo "NPM_PATH=/usr/bin/npm" >> .env
+
+# Set permissions:
+sudo chown -R www-data:www-data storage/
+sudo chmod -R 775 storage/
+
+═══════════════════════════════════════════════════════════════
+
+📚 DOCUMENTATION FILES
+──────────────────────────────────────────────────────────────
+✓ PDF_FIX_SUMMARY.md          - Overview & what was done
+✓ QUICK_PDF_FIX.md            - Fast 3-step solution
+✓ PDF_PRODUCTION_FIX.md       - Complete troubleshooting
+✓ setup-pdf-production.sh     - Automated setup script
+
+═══════════════════════════════════════════════════════════════
+
+🎯 ONE-LINER DEPLOYMENT (if you're in a hurry)
+──────────────────────────────────────────────────────────────
+ssh user@your-server.com 'cd /var/www/your-project && sudo ./setup-pdf-production.sh && git pull && php artisan config:clear && php artisan cache:clear'
+
+═══════════════════════════════════════════════════════════════

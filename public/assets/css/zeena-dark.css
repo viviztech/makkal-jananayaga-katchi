@@ -1,0 +1,141 @@
+body,
+body.boxed-wrapper .page-wrapper,
+.services-one__single,
+.pricing-one,
+.testimonial-one__inner::before {
+    background-color: #040405;
+}
+
+.feature-one__single,
+.about-one__points li .icon span,
+.about-one__contact-icon,
+.process-one__inner,
+.services-one__inner,
+.benefits-one__points li,
+.faq-one-accrodion .accrodion,
+.cta-one__inner,
+.pricing-one__single,
+.testimonial-one__wrap,
+.blog-one__content {
+    background-color: #0b0b0b;
+}
+
+.feature-one__title a,
+.section-title__title,
+.about-one__points li .text p,
+.about-one__it-solution-content p,
+.about-one__contact>p>a,
+.process-one__text,
+.services-one__title a,
+.benefits-one__points li .text p,
+.benefits-one__mission-title,
+.faq-one__system-title,
+.faq-one-accrodion .accrodion-title h4,
+.faq-one-accrodion .accrodion.active .accrodion-title h4,
+.faq-one-accrodion .accrodion-title h4::before,
+.faq-one-accrodion .accrodion.active .accrodion-title h4::before,
+.pricing-one__title,
+.pricing-one__price,
+.pricing-one__sub-title,
+.testimonial-one__client-name,
+.blog-one__title a {
+    color: var(--zeena-white);
+}
+
+.feature-one__text,
+.about-one__text,
+.about-one__contact>span,
+.benefits-one__text,
+.benefits-one__mission-text,
+.faq-one__text,
+.faq-one__system-text,
+.faq-one__system-points .text p,
+.faq-one-accrodion .accrodion-content p,
+.testimonial-one__text,
+.blog-one__text {
+    color: #ada8ba;
+}
+
+.about-one__it-solution {
+    border-top: 1px solid #0b0b0b;
+    border-bottom: 1px solid #0b0b0b;
+}
+
+.process-one__inner {
+    border-top: 1px solid #0b0b0b;
+}
+
+.process-one__single {
+    background-color: #0f0f10;
+    box-shadow: none;
+}
+
+.process-one__count:before {
+    color: rgba(255, 255, 255, .05);
+}
+
+.services-one__single {
+    background-color: #040405;
+    border: 1px solid #0b0b0b;
+}
+
+.benefits-one__shape-1 {
+    display: none;
+}
+
+.benefits-one__bg-one {
+    display: none;
+}
+
+.benefits-one__overly {
+    display: none;
+}
+
+.benefits-one {
+    padding: 0px 0 120px;
+}
+
+.cta-one__number a:hover {
+    color: var(--zeena-base);
+}
+
+.pricing-one__price-box {
+    border: 2px solid rgba(var(--zeena-white-rgb), .10);
+}
+
+.pricing-one__single:hover .pricing-one__title {
+    color: var(--zeena-black);
+}
+
+.pricing-one__single:hover .pricing-one__price {
+    color: var(--zeena-black);
+}
+
+.pricing-one__single:hover .pricing-one__sub-title {
+    color: var(--zeena-black);
+}
+
+.blog-one__btn {
+    border-top: 1px solid rgba(var(--zeena-white-rgb), .10);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*  */

@@ -1,0 +1,133 @@
+/* Custom Filament Admin Theme for VCK */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        /* Custom spacing and sizing */
+        --sidebar-width: 16rem;
+    }
+}
+
+@layer utilities {
+    /* Custom scrollbar styling */
+    ::-webkit-scrollbar {
+        width: 8px;
+        height: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background-color: rgb(243 244 246);
+    }
+
+    .dark ::-webkit-scrollbar-track {
+        background-color: rgb(31 41 55);
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: rgb(156 163 175);
+        border-radius: 9999px;
+    }
+
+    .dark ::-webkit-scrollbar-thumb {
+        background-color: rgb(75 85 99);
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+        background-color: rgb(107 114 128);
+    }
+
+    .dark ::-webkit-scrollbar-thumb:hover {
+        background-color: rgb(107 114 128);
+    }
+}
+
+@layer components {
+    /* Enhanced card styling */
+    .fi-section {
+        box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    }
+
+    /* Custom button hover effects */
+    .fi-btn:hover {
+        transform: scale(1.01);
+        transition: transform 0.15s;
+    }
+
+    /* Enhanced form field focus states */
+    .fi-input:focus,
+    .fi-select:focus,
+    .fi-textarea:focus {
+        box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5);
+    }
+
+    /* Sidebar customization */
+    .fi-sidebar {
+        border-right: 1px solid rgb(229 231 235);
+    }
+
+    .dark .fi-sidebar {
+        border-right-color: rgb(55 65 81);
+    }
+
+    /* Dashboard widget enhancements */
+    .fi-wi {
+        transition: box-shadow 0.2s;
+    }
+
+    .fi-wi:hover {
+        box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    }
+
+    /* Table styling improvements */
+    .fi-ta {
+        border-radius: 0.5rem;
+        overflow: hidden;
+    }
+
+    /* Custom table row hover effect */
+    .fi-ta-row:hover {
+        background-color: rgb(249 250 251);
+    }
+
+    .dark .fi-ta-row:hover {
+        background-color: rgba(31, 41, 55, 0.5);
+    }
+
+    /* Stats card improvements */
+    .fi-stats-card {
+        transition: all 0.2s;
+    }
+
+    .fi-stats-card:hover {
+        transform: scale(1.05);
+    }
+
+    /* Sidebar header styling */
+    .fi-sidebar-header {
+        padding: 1.5rem 1rem;
+    }
+
+    /* Enhanced modal styling */
+    .fi-modal {
+        backdrop-filter: blur(4px);
+    }
+}
+
+/* Custom animation for notifications */
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.fi-no {
+    animation: slideIn 0.3s ease-out;
+}

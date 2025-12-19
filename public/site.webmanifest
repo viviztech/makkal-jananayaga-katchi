@@ -1,0 +1,116 @@
+{
+  "name": "VCK - Viduthalai Chiruthaigal Katchi",
+  "short_name": "VCK",
+  "description": "Official website of Viduthalai Chiruthaigal Katchi - Empowering the Marginalized, Fighting for Justice",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#dc2626",
+  "orientation": "portrait-primary",
+  "categories": ["politics", "news", "social"],
+  "lang": "en",
+  "dir": "ltr",
+  "scope": "/",
+  "icons": [
+    {
+      "purpose": "maskable",
+      "sizes": "731.4285714285714x731.4285714285714",
+      "src": "/assets/images/favicons/maskable_icon.png",
+      "type": "image/png"
+    },
+    {
+      "purpose": "maskable",
+      "sizes": "48x48",
+      "src": "/assets/images/favicons/maskable_icon_x48.png",
+      "type": "image/png"
+    },
+    {
+      "purpose": "maskable",
+      "sizes": "72x72",
+      "src": "/assets/images/favicons/maskable_icon_x72.png",
+      "type": "image/png"
+    },
+    {
+      "purpose": "maskable",
+      "sizes": "96x96",
+      "src": "/assets/images/favicons/maskable_icon_x96.png",
+      "type": "image/png"
+    },
+    {
+      "purpose": "maskable",
+      "sizes": "128x128",
+      "src": "/assets/images/favicons/maskable_icon_x128.png",
+      "type": "image/png"
+    },
+    {
+      "purpose": "maskable",
+      "sizes": "192x192",
+      "src": "/assets/images/favicons/maskable_icon_x192.png",
+      "type": "image/png"
+    },
+    {
+      "purpose": "maskable",
+      "sizes": "384x384",
+      "src": "/assets/images/favicons/maskable_icon_x384.png",
+      "type": "image/png"
+    },
+    {
+      "purpose": "maskable",
+      "sizes": "512x512",
+      "src": "/assets/images/favicons/maskable_icon_x512.png",
+      "type": "image/png"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Latest News",
+      "short_name": "News",
+      "description": "Read the latest news and updates",
+      "url": "/latest-news",
+      "icons": [
+        {
+          "src": "/assets/images/favicons/favicon-96x96.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Join VCK",
+      "short_name": "Join",
+      "description": "Become a member of VCK",
+      "url": "/join",
+      "icons": [
+        {
+          "src": "/assets/images/favicons/favicon-96x96.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Contact Us",
+      "short_name": "Contact",
+      "description": "Get in touch with VCK",
+      "url": "/contact",
+      "icons": [
+        {
+          "src": "/assets/images/favicons/favicon-96x96.png",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/assets/images/screenshots/home-mobile.png",
+      "sizes": "390x844",
+      "type": "image/png",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "/assets/images/screenshots/home-desktop.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide"
+    }
+  ]
+}
