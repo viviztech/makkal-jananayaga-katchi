@@ -101,7 +101,9 @@
 {{-- Rally Banner Section --}}
 @php
     // Get upcoming event from Media with category 'events' if it exists
-    $eventsCategory = \App\Models\Category::where('slug', 'events')->orWhere('name_en', 'Events')->first();
+    $eventsCategory = \App\Models\Category::where('name_en', 'LIKE', '%Event%')
+        ->orWhere('name_ta', 'LIKE', '%நிகழ்வு%')
+        ->first();
     $upcomingEvent = null;
 
     if ($eventsCategory) {
@@ -153,8 +155,8 @@
         <div id="tab-news" class="tab-content">
             <div class="grid md:grid-cols-3 gap-8">
                 @php
-                    $newsCategory = \App\Models\Category::where('slug', 'news')
-                        ->orWhere('name_en', 'LIKE', '%News%')
+                    $newsCategory = \App\Models\Category::where('name_en', 'LIKE', '%News%')
+                        ->orWhere('name_ta', 'LIKE', '%செய்தி%')
                         ->first();
                     $latestNews = $newsCategory
                         ? \App\Models\Media::where('category_id', $newsCategory->id)->latest()->take(3)->get()
@@ -203,8 +205,8 @@
         <div id="tab-press" class="tab-content hidden">
             <div class="grid md:grid-cols-3 gap-8">
                 @php
-                    $pressCategory = \App\Models\Category::where('slug', 'press-releases')
-                        ->orWhere('name_en', 'LIKE', '%Press%')
+                    $pressCategory = \App\Models\Category::where('name_en', 'LIKE', '%Press%')
+                        ->orWhere('name_ta', 'LIKE', '%அறிக்கை%')
                         ->first();
                     $pressReleases = $pressCategory
                         ? \App\Models\Media::where('category_id', $pressCategory->id)->latest()->take(3)->get()
@@ -246,8 +248,8 @@
         <div id="tab-events" class="tab-content hidden">
             <div class="grid md:grid-cols-3 gap-8">
                 @php
-                    $eventsTabCategory = \App\Models\Category::where('slug', 'events')
-                        ->orWhere('name_en', 'LIKE', '%Event%')
+                    $eventsTabCategory = \App\Models\Category::where('name_en', 'LIKE', '%Event%')
+                        ->orWhere('name_ta', 'LIKE', '%நிகழ்வு%')
                         ->first();
                     $upcomingEvents = $eventsTabCategory
                         ? \App\Models\Media::where('category_id', $eventsTabCategory->id)
