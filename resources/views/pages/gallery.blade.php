@@ -6,14 +6,21 @@
 @php
 use Illuminate\Support\Facades\Storage;
 @endphp
-    {{-- Page Header --}}
-    <x-page-header-simple
-        :title="__('site.menu.gallery')"
-        :subtitle="__('site.gallery.description')"
-    />
 
-    {{-- Gallery Content --}}
-    <section class="py-12 lg:py-16 px-4 bg-gray-50 dark:bg-gray-900">
+{{-- Campaign Hero Section --}}
+<section class="bg-gradient-to-br from-[var(--color-mjk-red)] via-[var(--color-mjk-red)] to-[var(--color-mjk-blue)] py-20">
+    <div class="max-w-7xl mx-auto px-4 text-center" data-aos="fade-up">
+        <h1 class="text-5xl md:text-6xl font-extrabold text-white mb-6">
+            {{ __('site.menu.gallery') }}
+        </h1>
+        <p class="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto">
+            {{ __('site.gallery.description') }}
+        </p>
+    </div>
+</section>
+
+{{-- Gallery Content --}}
+<section class="py-12 lg:py-16 px-4 bg-gray-50">
         <div class="max-w-7xl mx-auto">
             <div class="flex flex-col lg:flex-row gap-8">
                 {{-- Main Gallery Content --}}
@@ -24,13 +31,9 @@ use Illuminate\Support\Facades\Storage;
                 @php
                     $delay = ($index % 3) * 100;
                 @endphp
-                {{-- Gallery Card with Gradient Border --}}
-                <div class="group relative" data-aos="fade-up" data-aos-delay="{{ $delay }}">
-                    {{-- Animated Gradient Border --}}
-                    <div class="absolute -inset-0.5 bg-gradient-to-r from-green-500 to-emerald-500 rounded-3xl opacity-0 group-hover:opacity-100 blur transition duration-500"></div>
-
-                    {{-- Card Content --}}
-                    <div class="relative bg-white dark:bg-gray-800 rounded-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 flex flex-col h-full border border-gray-200 dark:border-gray-700">
+                {{-- Gallery Card --}}
+                <div class="card-campaign" data-aos="fade-up" data-aos-delay="{{ $delay }}">
+                    <div class="overflow-hidden flex flex-col h-full">
                         {{-- Featured Image --}}
                         <div class="relative h-48 overflow-hidden bg-gray-100 dark:bg-gray-700">
                             <a href="{{ route('media.show', $item->slug) }}" class="block w-full h-full">
@@ -40,7 +43,7 @@ use Illuminate\Support\Facades\Storage;
                             {{-- Event Date Badge --}}
                             @if($item->event_date)
                             <div class="absolute top-2 right-2">
-                                <div class="bg-white dark:bg-gray-900 text-green-700 dark:text-green-300 px-2 py-1 rounded-md text-xs font-semibold shadow-md">
+                                <div class="bg-white text-[var(--color-mjk-green)] px-2 py-1 rounded-md text-xs font-semibold shadow-md">
                                     {{ $item->event_date->format('M j') }}
                                 </div>
                             </div>
@@ -51,41 +54,41 @@ use Illuminate\Support\Facades\Storage;
                         </div>
 
                         {{-- Card Content --}}
-                        <div class="p-4 flex flex-col flex-grow bg-white dark:bg-gray-800">
+                        <div class="p-4 flex flex-col flex-grow">
                             {{-- Title --}}
-                            <h3 class="text-base font-semibold text-gray-900 dark:text-gray-100 mb-2 line-clamp-2 leading-tight min-h-[2.5rem]">
-                                 <a href="{{ route('media.show', $item->slug) }}" class="hover:text-green-600 dark:hover:text-green-400 transition-colors duration-200">
+                            <h3 class="text-base font-semibold text-gray-900 mb-2 line-clamp-2 leading-tight min-h-[2.5rem]">
+                                 <a href="{{ route('media.show', $item->slug) }}" class="hover:text-[var(--color-mjk-green)] transition-colors duration-200">
                                     {!! app()->getLocale() === 'ta' ? $item->title_ta : $item->title_en !!}
                                  </a>
                             </h3>
 
-                            {{-- Description/Excerpt (Optional) --}}
+                            {{-- Description/Excerpt --}}
                             @if(app()->getLocale() === 'ta' ? $item->content_ta : $item->content_en)
-                            <p class="text-gray-600 dark:text-gray-300 text-xs mb-3 line-clamp-2 flex-grow leading-relaxed">
+                            <p class="text-gray-600 text-xs mb-3 line-clamp-2 flex-grow leading-relaxed">
                                 {!! Str::limit(strip_tags(app()->getLocale() === 'ta' ? $item->content_ta : $item->content_en), 80) !!}
                             </p>
                             @endif
 
                             {{-- Meta Information --}}
-                            <div class="flex items-center justify-between text-xs text-gray-500 dark:text-gray-400 mt-auto pt-3 border-t border-gray-200 dark:border-gray-700">
+                            <div class="flex items-center justify-between text-xs text-gray-500 mt-auto pt-3 border-t border-gray-200">
                                 <span class="flex items-center">
                                     <svg class="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
                                     </svg>
                                     {{ $item->created_at->diffForHumans() }}
                                 </span>
-                                <span class="bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-300 px-2 py-0.5 rounded-full text-xs font-medium">
+                                <span class="bg-[var(--color-mjk-green)]/10 text-[var(--color-mjk-green)] px-2 py-0.5 rounded-full text-xs font-medium">
                                     {{ $item->category->name ?? 'Gallery' }}
                                 </span>
                             </div>
 
                              {{-- Action Buttons --}}
                             <div class="mt-3 flex items-center gap-2">
-                                <a href="{{ route('media.show', $item->slug) }}" class="flex-1 inline-flex items-center justify-center bg-green-600 hover:bg-green-700 text-white px-3 py-2 rounded-md text-xs font-medium transition-colors duration-200">
+                                <a href="{{ route('media.show', $item->slug) }}" class="flex-1 inline-flex items-center justify-center bg-[var(--color-mjk-green)] hover:bg-green-700 text-white px-3 py-2 rounded-md text-xs font-medium transition-colors duration-200">
                                     {{ __('site.about.learn-more') }}
                                 </a>
-                                {{-- View Image Button (Opens in new tab) --}}
-                                <a href="{{ $item->featured_image_url }}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center p-2 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-md hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors duration-200" title="View Image">
+                                {{-- View Image Button --}}
+                                <a href="{{ $item->featured_image_url }}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center p-2 bg-gray-100 text-gray-700 rounded-md hover:bg-gray-200 transition-colors duration-200" title="View Image">
                                     <span class="sr-only">View Image</span>
                                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
                                 </a>
@@ -98,9 +101,7 @@ use Illuminate\Support\Facades\Storage;
 
             {{-- Pagination --}}
             @if ($gallery->hasPages())
-            <div class="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700 flex justify-center">
-                 {{-- Add Tailwind styling classes if you publish pagination views --}}
-                 {{-- Example basic styling: --}}
+            <div class="mt-16 pt-8 border-t border-gray-200 flex justify-center">
                  <div class="pagination-links">
                     {{ $gallery->links() }}
                  </div>
@@ -110,32 +111,22 @@ use Illuminate\Support\Facades\Storage;
             @else
             {{-- No Images Found --}}
             <div class="text-center py-24" data-aos="fade-up">
-                <div class="max-w-lg mx-auto relative group">
-                    {{-- Animated Gradient Border --}}
-                    <div class="absolute -inset-0.5 bg-gradient-to-r from-green-500 to-emerald-500 rounded-3xl opacity-50 blur transition duration-500"></div>
-
-                    {{-- Content Card --}}
-                    <div class="relative bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-950/30 dark:to-emerald-950/30 p-12 rounded-3xl border border-green-200 dark:border-green-800">
-                        {{-- Icon with Gradient Background --}}
-                        <div class="relative w-20 h-20 mx-auto mb-8">
-                            <div class="absolute inset-0 bg-gradient-to-br from-green-500 to-emerald-500 rounded-2xl opacity-20"></div>
-                            <div class="relative w-20 h-20 bg-white dark:bg-gray-900 rounded-2xl flex items-center justify-center shadow-lg border-2 border-green-200 dark:border-green-700">
-                                <svg class="w-10 h-10 text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-                                </svg>
-                            </div>
+                <div class="max-w-lg mx-auto">
+                    <div class="bg-gray-100 p-12 rounded-3xl">
+                        {{-- Icon --}}
+                        <div class="w-20 h-20 mx-auto mb-8 bg-white rounded-2xl flex items-center justify-center shadow-lg border-2 border-gray-200">
+                            <svg class="w-10 h-10 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                            </svg>
                         </div>
 
-                        <h2 class="text-3xl font-extrabold text-green-900 dark:text-green-100 mb-4">{{ __('site.gallery.no_images') }}</h2>
-                        <p class="text-lg text-green-700/80 dark:text-green-200/70 mb-8 leading-relaxed">{{ __('site.press_releases.check_back') }}</p>
+                        <h2 class="text-3xl font-extrabold text-gray-900 mb-4">{{ __('site.gallery.no_images') }}</h2>
+                        <p class="text-lg text-gray-600 mb-8 leading-relaxed">{{ __('site.press_releases.check_back') }}</p>
 
                         {{-- Back Home Button --}}
-                        <div class="relative inline-block group/btn">
-                            <div class="absolute -inset-0.5 bg-gradient-to-r from-green-500 to-emerald-500 rounded-xl opacity-75 group-hover/btn:opacity-100 blur transition duration-300"></div>
-                            <a href="{{ route('home') }}" class="relative inline-block bg-gradient-to-r from-green-600 to-emerald-600 text-white px-8 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-2xl">
-                                {{ __('site.footer.back_home') }}
-                            </a>
-                        </div>
+                        <a href="{{ route('home') }}" class="btn-campaign btn-campaign-primary">
+                            {{ __('site.footer.back_home') }}
+                        </a>
                     </div>
                 </div>
             </div>
@@ -147,8 +138,8 @@ use Illuminate\Support\Facades\Storage;
                     {{-- Latest News Widget --}}
                     @if(isset($latestNews) && $latestNews->isNotEmpty())
                     <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
-                        <div class="bg-gradient-to-r from-blue-600 to-blue-700 px-6 py-4">
-                            <h3 class="text-lg font-bold text-blue-500 flex items-center">
+                        <div class="bg-gradient-to-r from-[var(--color-mjk-red)] to-red-700 px-6 py-4">
+                            <h3 class="text-lg font-bold text-white flex items-center">
                                 <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/>
                                 </svg>
