@@ -44,8 +44,7 @@
     <div class="navbar-campaign-main max-w-7xl mx-auto">
         {{-- Logo --}}
         <a href="{{ route('home') }}" class="navbar-campaign-logo">
-            <img src="{{ asset('assets/images/favicons/apple-touch-icon.png') }}" alt="VCK Logo" class="h-12 w-12">
-            <span class="text-2xl font-extrabold text-[var(--color-mjk-red)] hidden sm:inline">
+            <span class="text-2xl font-extrabold text-[var(--color-mjk-red)]">
                 {{ __('site.title') }}
             </span>
         </a>
