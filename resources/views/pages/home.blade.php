@@ -8,7 +8,7 @@
 <x-campaign-hero
     :title="__('site.hero.title')"
     :subtitle="__('site.hero.subtitle')"
-    :ctaText="__('site.menu.join_vck')"
+    :ctaText="__('site.menu.join_mjk')"
     :ctaUrl="route('join')"
     :backgroundImage="asset('assets/images/hero-bg.jpg')"
 />

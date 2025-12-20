@@ -31,7 +31,7 @@
         {{-- Get Involved Column --}}
         <div>
             <h3>{{ __('site.footer.quick_links') }}</h3>
-            <a href="{{ route('join') }}">{{ __('site.menu.join_vck') }}</a>
+            <a href="{{ route('join') }}">{{ __('site.menu.join_mjk') }}</a>
             <a href="{{ route('donation') }}">{{ __('site.menu.donations') }}</a>
             <a href="{{ route('applications') }}">{{ __('site.menu.applications') }}</a>
             <a href="{{ route('contact') }}">{{ __('site.menu.contact') }}</a>

@@ -87,7 +87,7 @@ class AdminPanelProvider extends PanelProvider
                 FilamentBackgroundsPlugin::make(),
             ])
             // Production-ready settings
-            ->brandName(env('APP_NAME', 'VCK Admin'))
+            ->brandName(env('APP_NAME', 'MJK Admin'))
             ->favicon(asset('favicon.ico'));
     }
 }
