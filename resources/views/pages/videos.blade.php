@@ -3,14 +3,20 @@
 @section('title', __('site.menu.videos'))
 
 @section('content')
-    {{-- Page Header --}}
-    <x-page-header-simple
-        :title="__('site.menu.videos')"
-        :subtitle="__('site.videos.description')"
-    />
+{{-- Campaign Hero Section --}}
+<section class="bg-gradient-to-br from-[var(--color-mjk-red)] via-[var(--color-mjk-red)] to-[var(--color-mjk-blue)] py-20">
+    <div class="max-w-7xl mx-auto px-4 text-center" data-aos="fade-up">
+        <h1 class="text-5xl md:text-6xl font-extrabold text-white mb-6">
+            {{ __('site.menu.videos') }}
+        </h1>
+        <p class="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto">
+            {{ __('site.videos.description') }}
+        </p>
+    </div>
+</section>
 
     {{-- Videos Content --}}
-    <section class="py-12 lg:py-16 px-4 bg-gray-50 dark:bg-gray-900">
+    <section class="py-12 lg:py-16 px-4 bg-gray-50">
         <div class="max-w-7xl mx-auto">
             <div class="flex flex-col lg:flex-row gap-8">
                 {{-- Main Videos Content --}}
@@ -26,13 +32,9 @@
                     }
                     $thumbnail = $videoId ? "https://img.youtube.com/vi/{$videoId}/maxresdefault.jpg" : asset('assets/images/placeholders/video-placeholder.jpg');
                 @endphp
-                {{-- Video Card with Gradient Border --}}
-                <div class="group relative" data-aos="fade-up" data-aos-delay="{{ $delay }}">
-                    {{-- Animated Gradient Border --}}
-                    <div class="absolute -inset-0.5 bg-gradient-to-r from-red-500 to-orange-500 rounded-3xl opacity-0 group-hover:opacity-100 blur transition duration-500"></div>
-
-                    {{-- Card Content --}}
-                    <div class="relative bg-white dark:bg-gray-800 rounded-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1 flex flex-col h-full border border-gray-200 dark:border-gray-700">
+                {{-- Video Card --}}
+                <div class="card-campaign" data-aos="fade-up" data-aos-delay="{{ $delay }}">
+                    <div class="overflow-hidden flex flex-col h-full">
                         {{-- Featured Image --}}
                         <div class="relative h-48 overflow-hidden bg-gray-100 dark:bg-gray-700 cursor-pointer video-thumbnail" data-video-id="{{ $videoId }}" data-video-url="{{ $video->video_link }}">
                             <img src="{{ $thumbnail }}"
@@ -54,7 +56,7 @@
 
                             {{-- YouTube Badge --}}
                             <div class="absolute top-2 right-2">
-                                <div class="bg-red-600 text-white px-2 py-1 rounded-md text-xs font-semibold shadow-md flex items-center gap-1">
+                                <div class="bg-white text-[var(--color-mjk-red)] px-2 py-1 rounded-md text-xs font-semibold shadow-md flex items-center gap-1">
                                     <svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
                                     YouTube
                                 </div>
@@ -62,21 +64,21 @@
                         </div>
 
                         {{-- Card Content --}}
-                        <div class="p-4 flex flex-col flex-grow bg-white dark:bg-gray-800">
+                        <div class="p-4 flex flex-col flex-grow">
                             {{-- Title --}}
                             <h3 class="text-base font-semibold text-gray-900 dark:text-gray-100 mb-2 line-clamp-2 leading-tight min-h-[2.5rem]">
                                 {!! app()->getLocale() === 'ta' ? $video->title_ta : $video->title_en !!}
                             </h3>
 
                             {{-- Meta Information --}}
-                            <div class="flex items-center justify-between text-xs text-gray-500 dark:text-gray-400 mt-auto pt-3 border-t border-gray-200 dark:border-gray-700">
+                            <div class="flex items-center justify-between text-xs text-gray-500 mt-auto pt-3 border-t border-gray-200">
                                 <span class="flex items-center">
                                     <svg class="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
                                     </svg>
                                     {{ $video->event_date ? $video->event_date->format('M j, Y') : $video->created_at->diffForHumans() }}
                                 </span>
-                                <span class="bg-red-100 dark:bg-red-900/30 text-red-700 dark:text-red-300 px-2 py-0.5 rounded-full text-xs font-medium">
+                                <span class="bg-[var(--color-mjk-red)]/10 text-[var(--color-mjk-red)] px-2 py-0.5 rounded-full text-xs font-medium">
                                     Video
                                 </span>
                             </div>
@@ -99,32 +101,22 @@
             @else
             {{-- No Videos Found --}}
             <div class="text-center py-24" data-aos="fade-up">
-                <div class="max-w-lg mx-auto relative group">
-                    {{-- Animated Gradient Border --}}
-                    <div class="absolute -inset-0.5 bg-gradient-to-r from-indigo-500 to-violet-500 rounded-3xl opacity-50 blur transition duration-500"></div>
-
-                    {{-- Content Card --}}
-                    <div class="relative bg-gradient-to-br from-indigo-50 to-violet-50 dark:from-indigo-950/30 dark:to-violet-950/30 p-12 rounded-3xl border border-indigo-200 dark:border-indigo-800">
-                        {{-- Icon with Gradient Background --}}
-                        <div class="relative w-20 h-20 mx-auto mb-8">
-                            <div class="absolute inset-0 bg-gradient-to-br from-indigo-500 to-violet-500 rounded-2xl opacity-20"></div>
-                            <div class="relative w-20 h-20 bg-white dark:bg-gray-900 rounded-2xl flex items-center justify-center shadow-lg border-2 border-indigo-200 dark:border-indigo-700">
-                                <svg class="w-10 h-10 text-indigo-600 dark:text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
-                                </svg>
-                            </div>
+                <div class="max-w-lg mx-auto">
+                    <div class="bg-gray-100 p-12 rounded-3xl">
+                        {{-- Icon --}}
+                        <div class="w-20 h-20 mx-auto mb-8 bg-white rounded-2xl flex items-center justify-center shadow-lg border-2 border-gray-200">
+                            <svg class="w-10 h-10 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                            </svg>
                         </div>
 
-                        <h2 class="text-3xl font-extrabold text-indigo-900 dark:text-indigo-100 mb-4">{{ __('site.videos.no_videos') }}</h2>
-                        <p class="text-lg text-indigo-700/80 dark:text-indigo-200/70 mb-8 leading-relaxed">{{ __('site.press_releases.check_back') }}</p>
+                        <h2 class="text-3xl font-extrabold text-gray-900 mb-4">{{ __('site.videos.no_videos') }}</h2>
+                        <p class="text-lg text-gray-600 mb-8 leading-relaxed">{{ __('site.press_releases.check_back') }}</p>
 
                         {{-- Back Home Button --}}
-                        <div class="relative inline-block group/btn">
-                            <div class="absolute -inset-0.5 bg-gradient-to-r from-indigo-500 to-violet-500 rounded-xl opacity-75 group-hover/btn:opacity-100 blur transition duration-300"></div>
-                            <a href="{{ route('home') }}" class="relative inline-block bg-gradient-to-r from-indigo-600 to-violet-600 text-white px-8 py-3 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-2xl">
-                                {{ __('site.footer.back_home') }}
-                            </a>
-                        </div>
+                        <a href="{{ route('home') }}" class="btn-campaign btn-campaign-primary">
+                            {{ __('site.footer.back_home') }}
+                        </a>
                     </div>
                 </div>
             </div>
@@ -136,8 +128,8 @@
                     {{-- Latest News Widget --}}
                     @if(isset($latestNews) && $latestNews->isNotEmpty())
                     <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
-                        <div class="bg-gradient-to-r from-blue-600 to-blue-700 px-6 py-4">
-                            <h3 class="text-lg font-bold text-blue-500 flex items-center">
+                        <div class="bg-gradient-to-r from-[var(--color-mjk-red)] to-red-700 px-6 py-4">
+                            <h3 class="text-lg font-bold text-white flex items-center">
                                 <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"/>
                                 </svg>
@@ -147,7 +139,7 @@
                         <div class="p-4 space-y-3">
                             @foreach($latestNews as $news)
                             <a href="{{ route('media.show', $news->slug) }}" class="block group hover:bg-gray-50 dark:hover:bg-gray-700 p-2 rounded-lg transition-colors">
-                                <h4 class="text-sm font-semibold text-gray-900 dark:text-gray-100 line-clamp-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                                <h4 class="text-sm font-semibold text-gray-900 dark:text-gray-100 line-clamp-2 group-hover:text-[var(--color-mjk-red)] dark:group-hover:text-red-400 transition-colors">
                                     {{ app()->getLocale() === 'ta' ? $news->title_ta : $news->title_en }}
                                 </h4>
                                 <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">
@@ -155,7 +147,7 @@
                                 </p>
                             </a>
                             @endforeach
-                            <a href="{{ route('latest-news') }}" class="block text-center mt-4 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium rounded-lg transition-colors">
+                            <a href="{{ route('latest-news') }}" class="block text-center mt-4 px-4 py-2 bg-[var(--color-mjk-red)] hover:bg-red-700 text-white text-sm font-medium rounded-lg transition-colors">
                                 {{ __('site.about.learn-more') }} →
                             </a>
                         </div>
@@ -165,8 +157,8 @@
                     {{-- Latest Events Widget --}}
                     @if(isset($latestEvents) && $latestEvents->isNotEmpty())
                     <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
-                        <div class="bg-gradient-to-r from-green-600 to-green-700 px-6 py-4">
-                            <h3 class="text-lg font-bold text-green-500 flex items-center">
+                        <div class="bg-gradient-to-r from-[var(--color-mjk-green)] to-green-700 px-6 py-4">
+                            <h3 class="text-lg font-bold text-white flex items-center">
                                 <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
                                 </svg>
@@ -176,7 +168,7 @@
                         <div class="p-4 space-y-3">
                             @foreach($latestEvents as $event)
                             <a href="{{ route('media.show', $event->slug) }}" class="block group hover:bg-gray-50 dark:hover:bg-gray-700 p-2 rounded-lg transition-colors">
-                                <h4 class="text-sm font-semibold text-gray-900 dark:text-gray-100 line-clamp-2 group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors">
+                                <h4 class="text-sm font-semibold text-gray-900 dark:text-gray-100 line-clamp-2 group-hover:text-[var(--color-mjk-green)] dark:group-hover:text-green-400 transition-colors">
                                     {{ app()->getLocale() === 'ta' ? $event->title_ta : $event->title_en }}
                                 </h4>
                                 <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">
@@ -184,7 +176,7 @@
                                 </p>
                             </a>
                             @endforeach
-                            <a href="{{ route('events') }}" class="block text-center mt-4 px-4 py-2 bg-green-600 hover:bg-green-700 text-white text-sm font-medium rounded-lg transition-colors">
+                            <a href="{{ route('events') }}" class="block text-center mt-4 px-4 py-2 bg-[var(--color-mjk-green)] hover:bg-green-700 text-white text-sm font-medium rounded-lg transition-colors">
                                 {{ __('site.about.learn-more') }} →
                             </a>
                         </div>
@@ -194,8 +186,8 @@
                     {{-- Press Releases Widget --}}
                     @if(isset($pressReleases) && $pressReleases->isNotEmpty())
                     <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
-                        <div class="bg-gradient-to-r from-purple-600 to-purple-700 px-6 py-4">
-                            <h3 class="text-lg font-bold text-purple-500 flex items-center">
+                        <div class="bg-gradient-to-r from-[var(--color-mjk-blue)] to-blue-700 px-6 py-4">
+                            <h3 class="text-lg font-bold text-white flex items-center">
                                 <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
                                 </svg>
@@ -205,7 +197,7 @@
                         <div class="p-4 space-y-3">
                             @foreach($pressReleases as $press)
                             <a href="{{ route('media.show', $press->slug) }}" class="block group hover:bg-gray-50 dark:hover:bg-gray-700 p-2 rounded-lg transition-colors">
-                                <h4 class="text-sm font-semibold text-gray-900 dark:text-gray-100 line-clamp-2 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
+                                <h4 class="text-sm font-semibold text-gray-900 dark:text-gray-100 line-clamp-2 group-hover:text-[var(--color-mjk-blue)] dark:group-hover:text-blue-400 transition-colors">
                                     {{ app()->getLocale() === 'ta' ? $press->title_ta : $press->title_en }}
                                 </h4>
                                 <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">
@@ -213,7 +205,7 @@
                                 </p>
                             </a>
                             @endforeach
-                            <a href="{{ route('press-releases') }}" class="block text-center mt-4 px-4 py-2 bg-purple-600 hover:bg-purple-700 text-white text-sm font-medium rounded-lg transition-colors">
+                            <a href="{{ route('press-releases') }}" class="block text-center mt-4 px-4 py-2 bg-[var(--color-mjk-blue)] hover:bg-blue-700 text-white text-sm font-medium rounded-lg transition-colors">
                                 {{ __('site.about.learn-more') }} →
                             </a>
                         </div>
@@ -223,8 +215,8 @@
                     {{-- Gallery Widget --}}
                     @if(isset($gallery) && $gallery->isNotEmpty())
                     <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
-                        <div class="bg-gradient-to-r from-green-600 to-green-700 px-6 py-4">
-                            <h3 class="text-lg font-bold text-green-500 flex items-center">
+                        <div class="bg-gradient-to-r from-[var(--color-mjk-green)] to-green-700 px-6 py-4">
+                            <h3 class="text-lg font-bold text-white flex items-center">
                                 <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
                                 </svg>
@@ -234,7 +226,7 @@
                         <div class="p-4 space-y-3">
                             @foreach($gallery as $item)
                             <a href="{{ route('media.show', $item->slug) }}" class="block group hover:bg-gray-50 dark:hover:bg-gray-700 p-2 rounded-lg transition-colors">
-                                <h4 class="text-sm font-semibold text-gray-900 dark:text-gray-100 line-clamp-2 group-hover:text-green-600 dark:group-hover:text-green-400 transition-colors">
+                                <h4 class="text-sm font-semibold text-gray-900 dark:text-gray-100 line-clamp-2 group-hover:text-[var(--color-mjk-green)] dark:group-hover:text-green-400 transition-colors">
                                     {{ app()->getLocale() === 'ta' ? $item->title_ta : $item->title_en }}
                                 </h4>
                                 <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">
@@ -242,7 +234,7 @@
                                 </p>
                             </a>
                             @endforeach
-                            <a href="{{ route('gallery') }}" class="block text-center mt-4 px-4 py-2 bg-green-600 hover:bg-green-700 text-white text-sm font-medium rounded-lg transition-colors">
+                            <a href="{{ route('gallery') }}" class="block text-center mt-4 px-4 py-2 bg-[var(--color-mjk-green)] hover:bg-green-700 text-white text-sm font-medium rounded-lg transition-colors">
                                 {{ __('site.about.learn-more') }} →
                             </a>
                         </div>
@@ -252,7 +244,7 @@
                     {{-- Quick Links Widget --}}
                     <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
                         <div class="bg-gradient-to-r from-gray-700 to-gray-800 px-6 py-4">
-                            <h3 class="text-lg font-bold text-gray-600 flex items-center">
+                            <h3 class="text-lg font-bold text-white flex items-center">
                                 <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/>
                                 </svg>
@@ -261,32 +253,32 @@
                         </div>
                         <div class="p-4 space-y-2">
                             <a href="{{ route('latest-news') }}" class="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 rounded-lg transition-colors group">
-                                <span class="text-sm font-medium text-gray-700 dark:text-gray-300 group-hover:text-blue-600 dark:group-hover:text-blue-400">{{ __('site.menu.latest_news') }}</span>
-                                <svg class="w-4 h-4 text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <span class="text-sm font-medium text-gray-700 dark:text-gray-300 group-hover:text-[var(--color-mjk-red)] dark:group-hover:text-red-400">{{ __('site.menu.latest_news') }}</span>
+                                <svg class="w-4 h-4 text-gray-400 group-hover:text-[var(--color-mjk-red)] dark:group-hover:text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
                                 </svg>
                             </a>
                             <a href="{{ route('press-releases') }}" class="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 rounded-lg transition-colors group">
-                                <span class="text-sm font-medium text-gray-700 dark:text-gray-300 group-hover:text-purple-600 dark:group-hover:text-purple-400">{{ __('site.menu.press_release') }}</span>
-                                <svg class="w-4 h-4 text-gray-400 group-hover:text-purple-600 dark:group-hover:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <span class="text-sm font-medium text-gray-700 dark:text-gray-300 group-hover:text-[var(--color-mjk-blue)] dark:group-hover:text-blue-400">{{ __('site.menu.press_release') }}</span>
+                                <svg class="w-4 h-4 text-gray-400 group-hover:text-[var(--color-mjk-blue)] dark:group-hover:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
                                 </svg>
                             </a>
                             <a href="{{ route('events') }}" class="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 rounded-lg transition-colors group">
-                                <span class="text-sm font-medium text-gray-700 dark:text-gray-300 group-hover:text-green-600 dark:group-hover:text-green-400">{{ __('site.home.events') }}</span>
-                                <svg class="w-4 h-4 text-gray-400 group-hover:text-green-600 dark:group-hover:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <span class="text-sm font-medium text-gray-700 dark:text-gray-300 group-hover:text-[var(--color-mjk-green)] dark:group-hover:text-green-400">{{ __('site.home.events') }}</span>
+                                <svg class="w-4 h-4 text-gray-400 group-hover:text-[var(--color-mjk-green)] dark:group-hover:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
                                 </svg>
                             </a>
                             <a href="{{ route('gallery') }}" class="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 rounded-lg transition-colors group">
-                                <span class="text-sm font-medium text-gray-700 dark:text-gray-300 group-hover:text-green-600 dark:group-hover:text-green-400">{{ __('site.menu.gallery') }}</span>
-                                <svg class="w-4 h-4 text-gray-400 group-hover:text-green-600 dark:group-hover:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <span class="text-sm font-medium text-gray-700 dark:text-gray-300 group-hover:text-[var(--color-mjk-green)] dark:group-hover:text-green-400">{{ __('site.menu.gallery') }}</span>
+                                <svg class="w-4 h-4 text-gray-400 group-hover:text-[var(--color-mjk-green)] dark:group-hover:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
                                 </svg>
                             </a>
                             <a href="{{ route('interviews') }}" class="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-700 hover:bg-gray-100 dark:hover:bg-gray-600 rounded-lg transition-colors group">
-                                <span class="text-sm font-medium text-gray-700 dark:text-gray-300 group-hover:text-orange-600 dark:group-hover:text-orange-400">{{ __('site.menu.interviews') }}</span>
-                                <svg class="w-4 h-4 text-gray-400 group-hover:text-orange-600 dark:group-hover:text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <span class="text-sm font-medium text-gray-700 dark:text-gray-300 group-hover:text-[var(--color-mjk-orange)] dark:group-hover:text-orange-400">{{ __('site.menu.interviews') }}</span>
+                                <svg class="w-4 h-4 text-gray-400 group-hover:text-[var(--color-mjk-orange)] dark:group-hover:text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
                                 </svg>
                             </a>

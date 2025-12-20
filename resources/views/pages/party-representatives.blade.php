@@ -3,13 +3,17 @@
 @section('title', __('site.party_representatives.title'))
 
 @section('content')
-  {{-- Page Header --}}
-  <section class="relative bg-gray-900 dark:bg-gray-950 py-24 md:py-32">
-    <div class="relative max-w-7xl mx-auto px-4 text-center">
-      <h1 class="text-5xl md:text-6xl font-extrabold text-white mb-4">{{ __('site.menu.party_representatives') }}</h1>
-      <p class="text-xl text-gray-300 max-w-3xl mx-auto">{{ __('site.party_representatives.district_representatives_desc') ?? 'மாவட்ட அளவிலான பிரதிநிதிகள்' }}</p>
+{{-- Campaign Hero Section --}}
+<section class="bg-gradient-to-br from-[var(--color-mjk-red)] via-[var(--color-mjk-red)] to-[var(--color-mjk-blue)] py-20">
+    <div class="max-w-7xl mx-auto px-4 text-center" data-aos="fade-up">
+        <h1 class="text-5xl md:text-6xl font-extrabold text-white mb-6">
+            {{ __('site.menu.party_representatives') }}
+        </h1>
+        <p class="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto">
+            {{ __('site.party_representatives.district_representatives_desc') ?? 'மாவட்ட அளவிலான பிரதிநிதிகள்' }}
+        </p>
     </div>
-  </section>
+</section>
 
   
 
@@ -54,11 +58,11 @@
   @endif
 
   {{-- Contact Representatives CTA --}}
-  <section class="py-20 lg:py-28 px-4 {{ (isset($representatives) && $representatives->isNotEmpty()) ? 'bg-red-50 dark:bg-gray-900' : 'bg-white dark:bg-gray-800' }}">
+  <section class="py-20 lg:py-28 px-4 {{ (isset($representatives) && $representatives->isNotEmpty()) ? 'bg-gray-50' : 'bg-white' }}">
     <div class="max-w-4xl mx-auto text-center">
-      <h2 class="text-3xl lg:text-4xl font-extrabold text-red-700 dark:text-red-500 mb-6">{{ __('site.party_representatives.contact_title') }}</h2>
-      <p class="text-lg text-gray-700 dark:text-gray-300 mb-8">{{ __('site.party_representatives.contact_desc') }}</p>
-      <a href="{{ route('contact') }}" class="inline-block bg-red-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-red-700 dark:hover:bg-red-500 transition-all duration-300 transform hover:scale-105 shadow hover:shadow-lg">
+      <h2 class="text-3xl lg:text-4xl font-extrabold text-[var(--color-mjk-red)] mb-6">{{ __('site.party_representatives.contact_title') }}</h2>
+      <p class="text-lg text-gray-700 mb-8">{{ __('site.party_representatives.contact_desc') }}</p>
+      <a href="{{ route('contact') }}" class="btn-campaign btn-campaign-primary">
         {{ __('site.party_representatives.contact_button') }}
       </a>
     </div>

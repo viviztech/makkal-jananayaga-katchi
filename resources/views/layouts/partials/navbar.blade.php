@@ -68,7 +68,7 @@
                     <a href="{{ route('ideology') }}" class="dropdown-campaign-item {{ Request::routeIs('ideology') ? 'dropdown-campaign-item-active' : '' }}">{{ __('site.menu.ideology') }}</a>
                     <a href="{{ route('history') }}" class="dropdown-campaign-item {{ Request::routeIs('history') ? 'dropdown-campaign-item-active' : '' }}">{{ __('site.menu.history') }}</a>
                     <a href="{{ route('leadership') }}" class="dropdown-campaign-item {{ Request::routeIs('leadership') ? 'dropdown-campaign-item-active' : '' }}">{{ __('site.menu.leadership') }}</a>
-                    <a href="{{ route('elected-members') }}" class="dropdown-campaign-item {{ Request::routeIs('elected-members') ? 'dropdown-campaign-item-active' : '' }}">{{ __('site.menu.elected_members') }}</a>
+                    {{-- <a href="{{ route('elected-members') }}" class="dropdown-campaign-item {{ Request::routeIs('elected-members') ? 'dropdown-campaign-item-active' : '' }}">{{ __('site.menu.elected_members') }}</a> --}}
                     <a href="{{ route('office-bearers') }}" class="dropdown-campaign-item {{ Request::routeIs('office-bearers') ? 'dropdown-campaign-item-active' : '' }}">{{ __('site.menu.office_bearers') }}</a>
                     <a href="{{ route('party-representatives') }}" class="dropdown-campaign-item {{ Request::routeIs('party-representatives') ? 'dropdown-campaign-item-active' : '' }}">{{ __('site.menu.party_representatives') }}</a>
                     <div class="border-t my-1"></div>
@@ -88,7 +88,7 @@
                 <div class="dropdown-campaign-menu">
                     <a href="{{ route('gallery') }}" class="dropdown-campaign-item {{ Request::routeIs('gallery') ? 'dropdown-campaign-item-active' : '' }}">{{ __('site.menu.gallery') }}</a>
                     <a href="{{ route('videos') }}" class="dropdown-campaign-item {{ Request::routeIs('videos') ? 'dropdown-campaign-item-active' : '' }}">{{ __('site.menu.videos') }}</a>
-                    <a href="{{ route('books') }}" class="dropdown-campaign-item {{ Request::routeIs('books') ? 'dropdown-campaign-item-active' : '' }}">{{ __('site.menu.books') }}</a>
+                    {{-- <a href="{{ route('books') }}" class="dropdown-campaign-item {{ Request::routeIs('books') ? 'dropdown-campaign-item-active' : '' }}">{{ __('site.menu.books') }}</a> --}}
                 </div>
             </div>
 
@@ -105,7 +105,7 @@
                     <a href="{{ route('latest-news') }}" class="dropdown-campaign-item {{ Request::routeIs('latest-news') ? 'dropdown-campaign-item-active' : '' }}">{{ __('site.menu.latest_news') }}</a>
                     <a href="{{ route('events') }}" class="dropdown-campaign-item {{ Request::routeIs('events') ? 'dropdown-campaign-item-active' : '' }}">{{ __('site.home.events') }}</a>
                     <a href="{{ route('interviews') }}" class="dropdown-campaign-item {{ Request::routeIs('interviews') ? 'dropdown-campaign-item-active' : '' }}">{{ __('site.menu.interviews') }}</a>
-                    <a href="{{ route('kalaththil-siruthaigal') }}" class="dropdown-campaign-item {{ Request::routeIs('kalaththil-siruthaigal') ? 'dropdown-campaign-item-active' : '' }}">{{ __('site.menu.kalaththil_siruthaigal') }}</a>
+                    {{-- <a href="{{ route('kalaththil-siruthaigal') }}" class="dropdown-campaign-item {{ Request::routeIs('kalaththil-siruthaigal') ? 'dropdown-campaign-item-active' : '' }}">{{ __('site.menu.kalaththil_siruthaigal') }}</a> --}}
                 </div>
             </div>
 
@@ -160,7 +160,7 @@
                 ['route' => 'ideology', 'label' => 'site.menu.ideology'],
                 ['route' => 'history', 'label' => 'site.menu.history'],
                 ['route' => 'leadership', 'label' => 'site.menu.leadership'],
-                ['route' => 'elected-members', 'label' => 'site.menu.elected_members'],
+                {{-- ['route' => 'elected-members', 'label' => 'site.menu.elected_members'], --}}
                 ['route' => 'office-bearers', 'label' => 'site.menu.office_bearers'],
                 ['route' => 'party-representatives', 'label' => 'site.menu.party_representatives'],
                 ['divider' => true],
@@ -171,7 +171,7 @@
             <x-mobile-dropdown id="media-menu-mobile" :label="__('site.menu.media')" :items="[
                 ['route' => 'gallery', 'label' => 'site.menu.gallery'],
                 ['route' => 'videos', 'label' => 'site.menu.videos'],
-                ['route' => 'books', 'label' => 'site.menu.books'],
+                {{-- ['route' => 'books', 'label' => 'site.menu.books'], --}}
             ]" />
 
             <x-mobile-dropdown id="news-menu-mobile" :label="__('site.menu.news')" :items="[
@@ -179,7 +179,7 @@
                 ['route' => 'latest-news', 'label' => 'site.menu.latest_news'],
                 ['route' => 'events', 'label' => 'site.home.events'],
                 ['route' => 'interviews', 'label' => 'site.menu.interviews'],
-                ['route' => 'kalaththil-siruthaigal', 'label' => 'site.menu.kalaththil_siruthaigal'],
+                {{-- ['route' => 'kalaththil-siruthaigal', 'label' => 'site.menu.kalaththil_siruthaigal'], --}}
             ]" />
 
             <a href="{{ route('contact') }}" class="mobile-menu-campaign-link">{{ __('site.menu.contact') }}</a>

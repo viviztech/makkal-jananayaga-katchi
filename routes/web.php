@@ -38,7 +38,7 @@ Route::group(
         Route::get('/gallery', [PageController::class, 'gallery'])->name('gallery');
         Route::get('/videos', [PageController::class, 'videos'])->name('videos');
         Route::get('/interviews', [PageController::class, 'interviews'])->name('interviews');
-        Route::get('/kalaththil-siruthaigal', [PageController::class, 'kalaththilSiruthaigal'])->name('kalaththil-siruthaigal');
+        // Route::get('/kalaththil-siruthaigal', [PageController::class, 'kalaththilSiruthaigal'])->name('kalaththil-siruthaigal');
         Route::get('/media/{media}', [PageController::class, 'showMedia'])->name('media.show');
         Route::get('/contact', [PageController::class, 'contact'])->name('contact');
         Route::post('/contact', [PageController::class, 'contactStore'])->name('contact.store');
@@ -49,7 +49,7 @@ Route::group(
             return view('coming-soon');
         })->name('coming-soon');
         Route::get('/leadership', [PageController::class, 'leadership'])->name('leadership');
-        Route::get('/elected-members', [PageController::class, 'electedMembers'])->name('elected-members');
+        // Route::get('/elected-members', [PageController::class, 'electedMembers'])->name('elected-members');
         Route::get('/office-bearers', [PageController::class, 'officeBearers'])->name('office-bearers');
         Route::get('/party-representatives', [PageController::class, 'partyRepresentatives'])->name('party-representatives');
         Route::get('/party-wings', [PageController::class, 'partyWings'])->name('party-wings');
@@ -63,12 +63,12 @@ Route::group(
         Route::post('/donation/verify', [PageController::class, 'donationVerify'])->name('donation.verify');
         Route::get('/donation/success', [PageController::class, 'donationSuccess'])->name('donation.success');
 
-        Route::get('/books', [PageController::class, 'books'])->name('books');
-        Route::get('/books/{book}/order', [PageController::class, 'bookOrder'])->name('books.order');
-        Route::get('/books/{book}/read', [BookReaderController::class, 'read'])->name('books.read');
-        Route::post('/book-orders', [BookOrderController::class, 'store'])->name('book-orders.store');
-        Route::post('/book-orders/verify', [BookOrderController::class, 'verifyPayment'])->name('book-orders.verify');
-        Route::get('/book-orders/success', [BookOrderController::class, 'success'])->name('book-orders.success');
+        // Route::get('/books', [PageController::class, 'books'])->name('books');
+        // Route::get('/books/{book}/order', [PageController::class, 'bookOrder'])->name('books.order');
+        // Route::get('/books/{book}/read', [BookReaderController::class, 'read'])->name('books.read');
+        // Route::post('/book-orders', [BookOrderController::class, 'store'])->name('book-orders.store');
+        // Route::post('/book-orders/verify', [BookOrderController::class, 'verifyPayment'])->name('book-orders.verify');
+        // Route::get('/book-orders/success', [BookOrderController::class, 'success'])->name('book-orders.success');
 
         Route::get('/applications', [PageController::class, 'applications'])->name('applications');
         Route::post('/applications', [PageController::class, 'applicationsStore'])
