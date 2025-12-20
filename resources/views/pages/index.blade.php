@@ -40,7 +40,7 @@
                 {{-- Hero Visual --}}
                 <div class="relative">
                     <div class="relative w-full h-96 lg:h-[500px] rounded-2xl overflow-hidden shadow-2xl">
-                        <img src="{{ asset('assets/images/about/vck-about.webp') }}" alt="VCK Movement" class="w-full h-full object-cover">
+                        <img src="{{ asset('assets/images/about/mjk-about.webp') }}" alt="MJK Movement" class="w-full h-full object-cover">
                         <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                     </div>
 

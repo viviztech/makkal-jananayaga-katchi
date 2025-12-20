@@ -30,16 +30,16 @@
     {{-- Open Graph / Facebook --}}
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ url()->current() }}">
-    <meta property="og:title" content="@yield('title', 'VCK - Viduthalai Chiruthaigal Katchi')">
-    <meta property="og:description" content="Official website of Viduthalai Chiruthaigal Katchi - Empowering the Marginalized, Fighting for Justice">
-    <meta property="og:image" content="{{ url('/assets/images/about/vck-about.webp') }}">
+    <meta property="og:title" content="@yield('title', 'MJK - Makkal Jananayaga Katchi')">
+    <meta property="og:description" content="Official website of Makkal Jananayaga Katchi - Empowering the Marginalized, Fighting for Justice">
+    <meta property="og:image" content="{{ url('/assets/images/about/mjk-about.webp') }}">
 
     {{-- Twitter --}}
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="{{ url()->current() }}">
-    <meta property="twitter:title" content="@yield('title', 'VCK - Viduthalai Chiruthaigal Katchi')">
-    <meta property="twitter:description" content="Official website of Viduthalai Chiruthaigal Katchi - Empowering the Marginalized, Fighting for Justice">
-    <meta property="twitter:image" content="{{ url('/assets/images/about/vck-about.webp') }}">
+    <meta property="twitter:title" content="@yield('title', 'MJK - Makkal Jananayaga Katchi')">
+    <meta property="twitter:description" content="Official website of Makkal Jananayaga Katchi - Empowering the Marginalized, Fighting for Justice">
+    <meta property="twitter:image" content="{{ url('/assets/images/about/mjk-about.webp') }}">
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     {{-- AOS CSS --}}

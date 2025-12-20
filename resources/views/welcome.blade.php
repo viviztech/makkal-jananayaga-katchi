@@ -42,7 +42,7 @@
                 </div>
                 <!-- Image Side -->
                 <div class="flex-1 w-full max-w-md lg:max-w-none">
-                    <img src="{{ asset('assets/images/about/vck-about.webp') }}" alt="About Us" class="w-full h-160 object-cover rounded-lg shadow-lg">
+                    <img src="{{ asset('assets/images/about/mjk-about.webp') }}" alt="About Us" class="w-full h-160 object-cover rounded-lg shadow-lg">
                 </div>
             </div>
         </div>
