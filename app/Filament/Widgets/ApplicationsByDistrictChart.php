@@ -2,32 +2,45 @@
 
 namespace App\Filament\Widgets;
 
-use App\Models\District;
+use App\Models\Post;
 use Filament\Widgets\ChartWidget;
 
 class ApplicationsByDistrictChart extends ChartWidget
 {
-    protected ?string $heading = 'Applications by District';
+    protected ?string $heading = 'Party Heads by Position Level';
 
     protected function getData(): array
     {
-        $rows = District::query()
-            ->withCount('applications')
-            ->orderBy('name_en')
+        // Get bearers count grouped by posting stage
+        $postingstages = \App\Models\Postingstage::query()
+            ->withCount(['posts as bearers_count' => function($query) {
+                $query->join('bearers', 'posts.id', '=', 'bearers.post_id');
+            }])
+            ->orderBy('id')
             ->get(['id', 'name_en']);
 
-        $labels = $rows->pluck('name_en')->all();
-        $data = $rows->pluck('applications_count')->all();
+        $labels = $postingstages->pluck('name_en')->all();
+        $data = $postingstages->pluck('bearers_count')->all();
 
         return [
             'labels' => $labels,
             'datasets' => [
                 [
-                    'label' => 'Applications',
+                    'label' => 'Party Heads',
                     'data' => $data,
-                    'backgroundColor' => 'rgba(59, 130, 246, 0.5)',
-                    'borderColor' => 'rgba(59, 130, 246, 1)',
-                    'borderWidth' => 1,
+                    'backgroundColor' => [
+                        'rgba(220, 38, 38, 0.7)',   // Red
+                        'rgba(37, 99, 235, 0.7)',   // Blue
+                        'rgba(234, 179, 8, 0.7)',   // Yellow
+                        'rgba(16, 185, 129, 0.7)',  // Green
+                    ],
+                    'borderColor' => [
+                        'rgba(220, 38, 38, 1)',
+                        'rgba(37, 99, 235, 1)',
+                        'rgba(234, 179, 8, 1)',
+                        'rgba(16, 185, 129, 1)',
+                    ],
+                    'borderWidth' => 2,
                 ],
             ],
         ];
@@ -35,6 +48,6 @@ class ApplicationsByDistrictChart extends ChartWidget
 
     protected function getType(): string
     {
-        return 'bar';
+        return 'pie';
     }
 }

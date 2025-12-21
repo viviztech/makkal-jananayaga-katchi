@@ -34,4 +34,16 @@ class District extends Model
     {
         return $this->hasMany(Member::class);
     }
+
+    public function bearers()
+    {
+        return $this->hasManyThrough(
+            Bearer::class,
+            Assembly::class,
+            'district_id', // Foreign key on assemblies table
+            'assembly_id', // Foreign key on bearers table
+            'id', // Local key on districts table
+            'id' // Local key on assemblies table
+        );
+    }
 }

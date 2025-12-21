@@ -50,4 +50,16 @@ class Bearer extends Model
     {
         return $this->belongsTo(\App\Models\Assembly::class);
     }
+
+    public function district()
+    {
+        return $this->hasOneThrough(
+            \App\Models\District::class,
+            \App\Models\Assembly::class,
+            'id', // Foreign key on assemblies table
+            'id', // Foreign key on districts table
+            'assembly_id', // Local key on bearers table
+            'district_id' // Local key on assemblies table
+        );
+    }
 }

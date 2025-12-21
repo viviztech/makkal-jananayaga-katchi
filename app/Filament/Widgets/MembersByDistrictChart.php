@@ -7,27 +7,27 @@ use Filament\Widgets\ChartWidget;
 
 class MembersByDistrictChart extends ChartWidget
 {
-    protected ?string $heading = 'Members by District';
+    protected ?string $heading = 'Party Heads by District';
 
     protected function getData(): array
     {
         $rows = District::query()
-            ->withCount('members')
+            ->withCount('bearers')
             ->orderBy('name_en')
             ->get(['id', 'name_en']);
 
         $labels = $rows->pluck('name_en')->all();
-        $data = $rows->pluck('members_count')->all();
+        $data = $rows->pluck('bearers_count')->all();
 
         return [
             'labels' => $labels,
             'datasets' => [
                 [
-                    'label' => 'Members',
+                    'label' => 'Party Heads',
                     'data' => $data,
-                    'backgroundColor' => 'rgba(16, 185, 129, 0.5)',
-                    'borderColor' => 'rgba(16, 185, 129, 1)',
-                    'borderWidth' => 1,
+                    'backgroundColor' => 'rgba(220, 38, 38, 0.5)', // Red color for MJK
+                    'borderColor' => 'rgba(220, 38, 38, 1)',
+                    'borderWidth' => 2,
                 ],
             ],
         ];
