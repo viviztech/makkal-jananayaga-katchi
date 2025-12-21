@@ -50,9 +50,7 @@ class AdminPanelProvider extends PanelProvider
                 'warning' => Color::Amber,
             ])
             ->darkMode(true)
-            ->brandLogo(asset('assets/images/resources/mjk-logo.webp'))
-            ->darkModeBrandLogo(asset('assets/images/resources/mjk-logo.webp'))
-            ->brandLogoHeight('2.5rem')
+            ->brandName('Political Party Admin')
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\Filament\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\Filament\Pages')
             ->pages([
@@ -86,8 +84,6 @@ class AdminPanelProvider extends PanelProvider
             ->plugins([
                 FilamentBackgroundsPlugin::make(),
             ])
-            // Production-ready settings
-            ->brandName(env('APP_NAME', 'MJK Admin'))
             ->favicon(asset('favicon.ico'));
     }
 }
