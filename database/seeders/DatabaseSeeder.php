@@ -15,22 +15,17 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
-        User::factory()->create([
-            'name' => 'Administrator',
-            'email' => 'admin@admin.com',
-        ]);
-
         $this->call([
-            StateSeeder::class,     
+            AdminUserSeeder::class,
+            StateSeeder::class,
             DistrictSeeder::class,
             AssemblySeeder::class,
             BlockSeeder::class,
             PerurSeeder::class,
             CitySeeder::class,
             CorporationSeeder::class,
-            PostingstageSeeder::class, // From previous request
-            SubbodySeeder::class,      // From previous request
-            PostingSeeder::class,      // Add this new seeder
+            PostingstageSeeder::class,
+            PostingSeeder::class,
         ]);
     }
 }
