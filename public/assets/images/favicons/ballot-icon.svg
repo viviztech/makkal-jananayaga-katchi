@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <!-- Background circle -->
+  <circle cx="256" cy="256" r="256" fill="#dc2626"/>
+
+  <!-- Ballot Box -->
+  <g transform="translate(256, 256)">
+    <!-- Box body -->
+    <rect x="-100" y="-40" width="200" height="140" fill="#FFFFFF" rx="8"/>
+
+    <!-- Box slot -->
+    <rect x="-80" y="-60" width="160" height="25" fill="#FFFFFF" rx="4"/>
+    <rect x="-75" y="-55" width="150" height="15" fill="#1e293b" rx="2"/>
+
+    <!-- Ballot paper being inserted -->
+    <g transform="translate(0, -80)">
+      <rect x="-25" y="0" width="50" height="60" fill="#FFF9E6" stroke="#333" stroke-width="2" rx="2"/>
+      <!-- Check mark on ballot -->
+      <path d="M -10 20 L -5 28 L 10 10" stroke="#dc2626" stroke-width="4" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    </g>
+
+    <!-- Box details/lines -->
+    <line x1="-90" y1="20" x2="90" y2="20" stroke="#e5e7eb" stroke-width="2"/>
+    <line x1="-90" y1="50" x2="90" y2="50" stroke="#e5e7eb" stroke-width="2"/>
+
+    <!-- Star/badge decoration -->
+    <circle cx="-70" cy="70" r="12" fill="#dc2626"/>
+    <circle cx="70" cy="70" r="12" fill="#dc2626"/>
+  </g>
+</svg>

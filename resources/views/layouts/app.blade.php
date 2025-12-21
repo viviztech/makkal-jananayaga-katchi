@@ -1,31 +1,29 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" data-theme="vck">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" data-theme="mjk">
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@yield('title', 'VCK - Viduthalai Chiruthaigal Katchi')</title>
+    <title>@yield('title', 'MJK - Makkal Jananayaga Katchi')</title>
 
     {{-- CSRF Token --}}
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     {{-- PWA Meta Tags --}}
-    <meta name="description" content="Official website of Viduthalai Chiruthaigal Katchi - Empowering the Marginalized, Fighting for Justice">
-    <meta name="keywords" content="VCK, Viduthalai Chiruthaigal Katchi, Tamil Nadu Politics, Social Justice, Dalit Rights">
-    <meta name="author" content="Viduthalai Chiruthaigal Katchi">
+    <meta name="description" content="Official website of Makkal Jananayaga Katchi - Empowering the Marginalized, Fighting for Justice">
+    <meta name="keywords" content="MJK, Makkal Jananayaga Katchi, Tamil Nadu Politics, Social Justice, Democratic Rights">
+    <meta name="author" content="Makkal Jananayaga Katchi">
     <meta name="theme-color" content="#dc2626">
     <meta name="msapplication-TileColor" content="#dc2626">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <meta name="apple-mobile-web-app-title" content="VCK">
+    <meta name="apple-mobile-web-app-title" content="MJK">
 
     {{-- Web App Manifest --}}
     <link rel="manifest" href="/site.webmanifest">
 
     {{-- Favicons --}}
-    <link rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicons/favicon-16x16.png">
-    <link rel="mask-icon" href="/assets/images/favicons/safari-pinned-tab.svg" color="#dc2626">
+
+
 
     {{-- Open Graph / Facebook --}}
     <meta property="og:type" content="website">
@@ -538,8 +536,8 @@ gap: 40px;
             installPrompt.innerHTML = `
                 <div class="flex items-start justify-between">
                     <div class="flex-1">
-                        <h3 class="font-bold text-lg mb-2">Install VCK App</h3>
-                        <p class="text-sm mb-3">Get the full VCK experience with offline access and notifications.</p>
+                        <h3 class="font-bold text-lg mb-2">Install MJK App</h3>
+                        <p class="text-sm mb-3">Get the full MJK experience with offline access and notifications.</p>
                         <div class="flex space-x-2">
                             <button onclick="installPWA()" class="bg-white text-blue-600 px-4 py-2 rounded font-medium hover:bg-gray-100 transition-colors">
                                 Install
