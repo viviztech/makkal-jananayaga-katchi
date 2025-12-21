@@ -60,9 +60,9 @@ class AdminPanelProvider extends PanelProvider
             ->widgets([
                 // AccountWidget::class,
                 // FilamentInfoWidget::class,
-                \App\Filament\Widgets\ApplicationsByDistrictChart::class,
-                \App\Filament\Widgets\MembersByDistrictChart::class,
                 \App\Filament\Widgets\ModelsOverview::class,
+                \App\Filament\Widgets\MembersByDistrictChart::class,
+                \App\Filament\Widgets\ApplicationsByDistrictChart::class,
             ])
             ->middleware([
                 EncryptCookies::class,
