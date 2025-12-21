@@ -1,6 +1,6 @@
 {{-- Campaign Top Bar --}}
 <div class="navbar-campaign-top">
-    <div class="max-w-7xl mx-auto flex justify-between items-center text-sm">
+    <div class="px-4 lg:px-8 flex justify-between items-center text-sm">
         {{-- Contact Information --}}
         <div class="flex items-center space-x-6">
             <a href="tel:{{ str_replace(' ', '', __('site.contact.phone')) }}" class="hover:opacity-80 transition-opacity">
@@ -41,7 +41,7 @@
 
 {{-- Main Campaign Navigation --}}
 <nav class="navbar-campaign">
-    <div class="navbar-campaign-main max-w-7xl mx-auto">
+    <div class="navbar-campaign-main px-4 lg:px-8">
         {{-- Logo --}}
         <a href="{{ route('home') }}" class="navbar-campaign-logo">
             <span class="text-2xl font-extrabold text-[var(--color-mjk-red)]">

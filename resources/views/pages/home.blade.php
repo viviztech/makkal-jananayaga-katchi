@@ -304,7 +304,7 @@
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="{{ route('join') }}" class="btn-campaign btn-campaign-outline text-xl px-10">
-                {{ __('site.menu.join_vck') }}
+                {{ __('site.menu.join_mjk') }}
             </a>
             <a href="{{ route('donation') }}" class="btn-campaign btn-campaign-cta text-xl px-10">
                 {{ __('site.menu.donations') }}

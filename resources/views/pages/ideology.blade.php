@@ -131,13 +131,15 @@
             </div>
             <div data-aos="fade-left" data-aos-delay="200">
                 <div class="relative">
-                    <div class="absolute -inset-4 bg-gradient-to-r from-[var(--color-mjk-red)] to-[var(--color-mjk-blue)] rounded-2xl opacity-20 blur-xl"></div>
-                    <img
-                        src="{{ asset('assets/images/ideology-vision.jpg') }}"
-                        alt="{{ __('site.ideology.our_vision') }}"
-                        class="relative rounded-2xl shadow-2xl w-full"
-                        onerror="this.src='{{ asset('assets/images/favicons/apple-touch-icon.png') }}'"
-                    />
+                    <div class="rounded-2xl shadow-2xl w-full h-96 bg-gradient-to-br from-[var(--color-mjk-red)] via-[var(--color-mjk-red)] to-[var(--color-mjk-blue)] flex items-center justify-center p-8">
+                        <div class="text-center text-white">
+                            <svg class="w-24 h-24 mx-auto mb-4 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path>
+                            </svg>
+                            <p class="text-2xl font-bold">{{ __('site.ideology.our_vision') }}</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -150,13 +152,14 @@
         <div class="grid md:grid-cols-2 gap-12 items-center">
             <div data-aos="fade-right" class="order-2 md:order-1">
                 <div class="relative">
-                    <div class="absolute -inset-4 bg-gradient-to-r from-[var(--color-mjk-blue)] to-[var(--color-mjk-red)] rounded-2xl opacity-20 blur-xl"></div>
-                    <img
-                        src="{{ asset('assets/images/ideology-mission.jpg') }}"
-                        alt="{{ __('site.ideology.our_mission') }}"
-                        class="relative rounded-2xl shadow-2xl w-full"
-                        onerror="this.src='{{ asset('assets/images/favicons/apple-touch-icon.png') }}'"
-                    />
+                    <div class="rounded-2xl shadow-2xl w-full h-96 bg-gradient-to-br from-[var(--color-mjk-blue)] via-[var(--color-mjk-blue)] to-[var(--color-mjk-red)] flex items-center justify-center p-8">
+                        <div class="text-center text-white">
+                            <svg class="w-24 h-24 mx-auto mb-4 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
+                            </svg>
+                            <p class="text-2xl font-bold">{{ __('site.ideology.our_mission') }}</p>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div data-aos="fade-left" data-aos-delay="200" class="order-1 md:order-2">
@@ -213,7 +216,7 @@
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="{{ route('join') }}" class="btn-campaign btn-campaign-outline text-xl px-10">
-                {{ __('site.menu.join_vck') }}
+                {{ __('site.menu.join_mjk') }}
             </a>
             <a href="{{ route('history') }}" class="btn-campaign btn-campaign-cta text-xl px-10">
                 {{ __('site.ideology.learn_history') }}

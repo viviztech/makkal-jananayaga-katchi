@@ -7,19 +7,19 @@
 @source '../**/*.js';
 
 @theme {
-    /* Campaign Color System */
+    /* Labour Welfare Theme - Red & White Color System */
     --color-mjk-red: #dc2626;
-    --color-mjk-blue: #1e40af;
-    --color-mjk-green: #16a34a;
-    --color-mjk-yellow: #eab308;
-    --color-mjk-orange: #ea580c;
+    --color-mjk-red-dark: #991b1b;
+    --color-mjk-red-light: #fca5a5;
+    --color-mjk-white: #ffffff;
+    --color-mjk-gray: #f3f4f6;
 
-    /* Semantic Political Colors */
+    /* Semantic Political Colors - All Red Variants */
     --color-movement: #dc2626;
-    --color-unity: #1e40af;
-    --color-progress: #16a34a;
-    --color-empowerment: #eab308;
-    --color-rally: #ea580c;
+    --color-unity: #dc2626;
+    --color-progress: #dc2626;
+    --color-empowerment: #dc2626;
+    --color-rally: #dc2626;
 
     /* Typography - Mukta Malar for Tamil support */
     --font-sans: 'Mukta Malar', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
